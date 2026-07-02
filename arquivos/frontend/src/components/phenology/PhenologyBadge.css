@@ -1,0 +1,158 @@
+.espiagro-phenology-badge {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(31, 107, 69, 0.14);
+  color: var(--text, #123126);
+  box-shadow:
+    0 14px 28px rgba(19, 48, 34, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65);
+}
+
+.espiagro-phenology-badge::after {
+  content: "";
+  position: absolute;
+  inset: auto -42px -54px auto;
+  width: 130px;
+  height: 130px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.24), transparent 68%);
+  pointer-events: none;
+}
+
+.espiagro-phenology-badge-card {
+  margin-top: 14px;
+  padding: 16px;
+  border-radius: 18px;
+}
+
+.espiagro-phenology-badge-compact {
+  padding: 12px 14px;
+  border-radius: 16px;
+}
+
+.espiagro-phenology-badge-inline {
+  width: fit-content;
+  max-width: 100%;
+  padding: 9px 12px;
+  border-radius: 999px;
+}
+
+.espiagro-phenology-tone-neutral {
+  background:
+    radial-gradient(circle at top right, rgba(98, 119, 108, 0.12), transparent 34%),
+    linear-gradient(135deg, rgba(98, 119, 108, 0.1), rgba(247, 251, 246, 0.98));
+  border-color: rgba(98, 119, 108, 0.14);
+}
+
+.espiagro-phenology-tone-early {
+  background:
+    radial-gradient(circle at top right, rgba(157, 207, 79, 0.24), transparent 34%),
+    linear-gradient(135deg, rgba(157, 207, 79, 0.16), rgba(247, 251, 246, 0.98));
+  border-color: rgba(157, 207, 79, 0.22);
+}
+
+.espiagro-phenology-tone-vegetative {
+  background:
+    radial-gradient(circle at top right, rgba(157, 207, 79, 0.22), transparent 34%),
+    linear-gradient(135deg, rgba(31, 107, 69, 0.14), rgba(247, 251, 246, 0.98));
+  border-color: rgba(31, 107, 69, 0.18);
+}
+
+.espiagro-phenology-tone-flowering {
+  background:
+    radial-gradient(circle at top right, rgba(201, 130, 22, 0.22), transparent 34%),
+    linear-gradient(135deg, rgba(201, 130, 22, 0.14), rgba(247, 251, 246, 0.98));
+  border-color: rgba(201, 130, 22, 0.2);
+}
+
+.espiagro-phenology-tone-reproductive {
+  background:
+    radial-gradient(circle at top right, rgba(36, 106, 138, 0.2), transparent 34%),
+    linear-gradient(135deg, rgba(36, 106, 138, 0.12), rgba(247, 251, 246, 0.98));
+  border-color: rgba(36, 106, 138, 0.18);
+}
+
+.espiagro-phenology-badge-topline {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.espiagro-phenology-badge-label {
+  color: var(--primary-strong, #174f34);
+  font-size: 0.76rem;
+  font-weight: 950;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.espiagro-phenology-badge-code {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 46px;
+  min-height: 28px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(31, 107, 69, 0.1);
+  color: var(--primary-strong, #174f34);
+  font-size: 0.78rem;
+  font-weight: 950;
+  line-height: 1;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+}
+
+.espiagro-phenology-badge-title {
+  position: relative;
+  z-index: 1;
+  display: block;
+  color: var(--text, #123126);
+  font-size: 1.16rem;
+  line-height: 1.24;
+  letter-spacing: -0.02em;
+}
+
+.espiagro-phenology-badge-description {
+  position: relative;
+  z-index: 1;
+  display: block;
+  margin-top: 8px;
+  color: var(--muted, #5f766b);
+  font-size: 0.9rem;
+  line-height: 1.46;
+}
+
+.espiagro-phenology-badge-inline .espiagro-phenology-badge-topline {
+  margin: 0;
+}
+
+.espiagro-phenology-badge-inline .espiagro-phenology-badge-label {
+  font-size: 0.72rem;
+}
+
+.espiagro-phenology-badge-inline .espiagro-phenology-badge-code,
+.espiagro-phenology-badge-inline .espiagro-phenology-badge-title,
+.espiagro-phenology-badge-inline .espiagro-phenology-badge-description {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .espiagro-phenology-badge-card {
+    padding: 15px;
+    border-radius: 17px;
+  }
+
+  .espiagro-phenology-badge-title {
+    font-size: 1.08rem;
+  }
+
+  .espiagro-phenology-badge-description {
+    font-size: 0.86rem;
+  }
+}

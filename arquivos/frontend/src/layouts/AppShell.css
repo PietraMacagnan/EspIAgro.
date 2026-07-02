@@ -1,0 +1,409 @@
+:root {
+  color-scheme: light;
+
+  --espiagro-bg: #eaf3e8;
+  --espiagro-bg-deep: #dfece0;
+  --espiagro-surface: #ffffff;
+  --espiagro-surface-soft: #f6fbf5;
+  --espiagro-surface-strong: #edf7ed;
+  --espiagro-border: rgba(22, 49, 38, 0.12);
+
+  --espiagro-text: #123126;
+  --espiagro-muted: #5f766b;
+
+  --espiagro-primary: #1f6b45;
+  --espiagro-primary-strong: #174f34;
+  --espiagro-accent: #9dcf4f;
+
+  --espiagro-danger: #b9412f;
+  --espiagro-danger-strong: #922f22;
+  --espiagro-warning: #c98216;
+  --espiagro-info: #246a8a;
+
+  --espiagro-shadow: 0 14px 34px rgba(19, 48, 34, 0.09);
+  --espiagro-shadow-soft: 0 20px 48px rgba(19, 48, 34, 0.1);
+
+  --espiagro-radius-xl: 30px;
+  --espiagro-radius-lg: 26px;
+  --espiagro-radius-md: 20px;
+  --espiagro-radius-sm: 16px;
+
+  --espiagro-sidebar-width: 312px;
+  --espiagro-content-max-width: 1480px;
+
+  --bg: var(--espiagro-bg);
+  --surface: var(--espiagro-surface);
+  --surface-soft: var(--espiagro-surface-soft);
+  --surface-strong: var(--espiagro-surface-strong);
+  --border: var(--espiagro-border);
+  --text: var(--espiagro-text);
+  --muted: var(--espiagro-muted);
+  --primary: var(--espiagro-primary);
+  --primary-strong: var(--espiagro-primary-strong);
+  --accent: var(--espiagro-accent);
+  --danger: var(--espiagro-danger);
+  --danger-strong: var(--espiagro-danger-strong);
+  --warning: var(--espiagro-warning);
+  --info: var(--espiagro-info);
+  --shadow: var(--espiagro-shadow);
+  --shadow-soft: var(--espiagro-shadow-soft);
+  --radius-xl: var(--espiagro-radius-xl);
+  --radius-lg: var(--espiagro-radius-lg);
+  --radius-md: var(--espiagro-radius-md);
+  --radius-sm: var(--espiagro-radius-sm);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+  color: var(--espiagro-text);
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+html {
+  height: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  background: var(--espiagro-bg);
+}
+
+body {
+  height: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background:
+    radial-gradient(circle at top left, rgba(157, 207, 79, 0.2), transparent 26%),
+    radial-gradient(circle at top right, rgba(31, 107, 69, 0.1), transparent 28%),
+    linear-gradient(180deg, #f5fbf3 0%, #eaf3e8 44%, #dfece0 100%);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+#root {
+  height: 100vh;
+  height: 100dvh;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid rgba(31, 107, 69, 0.22);
+  outline-offset: 2px;
+}
+
+/* Estrutura principal desktop */
+.espiagro-shell {
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  grid-template-columns: var(--espiagro-sidebar-width) minmax(0, 1fr);
+  align-items: stretch;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 76% 4%, rgba(157, 207, 79, 0.13), transparent 28%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(223, 236, 224, 0.18));
+}
+
+/*
+  Desktop:
+  - Sidebar ocupa a altura total da tela.
+  - Se o menu lateral for maior que a tela, ele rola dentro dele mesmo.
+  - O conteúdo principal rola de forma independente.
+*/
+.espiagro-shell > aside,
+.espiagro-sidebar,
+.espiagro-desktop-sidebar,
+.espiagro-shell-sidebar {
+  height: 100vh;
+  height: 100dvh;
+  max-height: 100vh;
+  max-height: 100dvh;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+}
+
+.espiagro-shell-main {
+  min-width: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 0;
+  padding: 22px 22px 34px;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+}
+
+.espiagro-shell-container {
+  width: 100%;
+  max-width: var(--espiagro-content-max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+  min-width: 0;
+  min-height: 100%;
+  overflow: visible;
+}
+
+.espiagro-shell-content {
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  flex: 1 0 auto;
+  overflow: visible;
+}
+
+.espiagro-shell-mobile-safe-area {
+  display: none;
+  height: 0;
+  flex-shrink: 0;
+}
+
+/* Scrollbar discreta no desktop */
+.espiagro-shell-main::-webkit-scrollbar,
+.espiagro-shell > aside::-webkit-scrollbar,
+.espiagro-sidebar::-webkit-scrollbar,
+.espiagro-desktop-sidebar::-webkit-scrollbar,
+.espiagro-shell-sidebar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.espiagro-shell-main::-webkit-scrollbar-track,
+.espiagro-shell > aside::-webkit-scrollbar-track,
+.espiagro-sidebar::-webkit-scrollbar-track,
+.espiagro-desktop-sidebar::-webkit-scrollbar-track,
+.espiagro-shell-sidebar::-webkit-scrollbar-track {
+  background: rgba(22, 49, 38, 0.04);
+}
+
+.espiagro-shell-main::-webkit-scrollbar-thumb,
+.espiagro-shell > aside::-webkit-scrollbar-thumb,
+.espiagro-sidebar::-webkit-scrollbar-thumb,
+.espiagro-desktop-sidebar::-webkit-scrollbar-thumb,
+.espiagro-shell-sidebar::-webkit-scrollbar-thumb {
+  background: rgba(22, 49, 38, 0.18);
+  border-radius: 999px;
+}
+
+.espiagro-shell-main::-webkit-scrollbar-thumb:hover,
+.espiagro-shell > aside::-webkit-scrollbar-thumb:hover,
+.espiagro-sidebar::-webkit-scrollbar-thumb:hover,
+.espiagro-desktop-sidebar::-webkit-scrollbar-thumb:hover,
+.espiagro-shell-sidebar::-webkit-scrollbar-thumb:hover {
+  background: rgba(22, 49, 38, 0.26);
+}
+
+/* Aviso simples do AppShell */
+.espiagro-shell-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 96px;
+  z-index: 1600;
+  width: min(520px, calc(100% - 24px));
+  transform: translateX(-50%);
+  padding: 14px 16px;
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at top right, rgba(157, 207, 79, 0.1), transparent 28%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(247, 251, 246, 0.98));
+  border: 1px solid var(--espiagro-border);
+  box-shadow: 0 18px 44px rgba(14, 34, 24, 0.18);
+  color: var(--espiagro-text);
+}
+
+.espiagro-shell-toast strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--espiagro-text);
+  font-size: 0.96rem;
+}
+
+.espiagro-shell-toast span {
+  display: block;
+  color: var(--espiagro-muted);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.espiagro-shell-toast button {
+  margin-top: 10px;
+  width: 100%;
+  border: 0;
+  border-radius: 14px;
+  padding: 11px 14px;
+  background: linear-gradient(135deg, #28a89b, #1f6b45);
+  color: #ffffff;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+/* Tablet e mobile */
+@media (max-width: 1180px) {
+  html,
+  body,
+  #root {
+    min-height: 100%;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  body {
+    background:
+      radial-gradient(circle at top left, rgba(157, 207, 79, 0.18), transparent 28%),
+      radial-gradient(circle at 100% 18%, rgba(31, 107, 69, 0.08), transparent 30%),
+      linear-gradient(180deg, #f6fbf4 0%, #eaf3e8 46%, #dfece0 100%);
+  }
+
+  #root {
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow: visible;
+  }
+
+  .espiagro-shell {
+    display: block;
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+    height: auto;
+    overflow: visible;
+  }
+
+  .espiagro-shell > aside,
+  .espiagro-sidebar,
+  .espiagro-desktop-sidebar,
+  .espiagro-shell-sidebar {
+    display: none !important;
+  }
+
+  .espiagro-shell-main {
+    width: 100%;
+    min-height: 0;
+    height: auto;
+    padding: 14px 14px 86px;
+    overflow: visible;
+  }
+
+  .espiagro-shell-container {
+    width: 100%;
+    max-width: 780px;
+    min-height: 0;
+    overflow: visible;
+  }
+
+  .espiagro-shell-content {
+    gap: 14px;
+    overflow: visible;
+  }
+
+  .espiagro-shell-mobile-safe-area {
+    display: block;
+    height: 12px;
+    flex-shrink: 0;
+  }
+
+  .espiagro-shell-toast {
+    bottom: 88px;
+  }
+}
+
+/* Smartphone */
+@media (max-width: 560px) {
+  body {
+    background:
+      radial-gradient(circle at 0% 0%, rgba(157, 207, 79, 0.18), transparent 32%),
+      radial-gradient(circle at 100% 10%, rgba(31, 107, 69, 0.1), transparent 34%),
+      linear-gradient(180deg, #f4faf2 0%, #e8f2e6 52%, #dceadd 100%);
+  }
+
+  .espiagro-shell-main {
+    padding: 10px 10px 82px;
+  }
+
+  .espiagro-shell-container {
+    max-width: 100%;
+  }
+
+  .espiagro-shell-content {
+    gap: 12px;
+  }
+
+  .espiagro-shell-mobile-safe-area {
+    height: 8px;
+  }
+
+  .espiagro-shell-toast {
+    bottom: 84px;
+    width: calc(100% - 20px);
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 390px) {
+  .espiagro-shell-main {
+    padding: 8px 8px 80px;
+  }
+
+  .espiagro-shell-content {
+    gap: 10px;
+  }
+
+  .espiagro-shell-mobile-safe-area {
+    height: 6px;
+  }
+}

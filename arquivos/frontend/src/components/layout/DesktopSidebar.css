@@ -1,0 +1,277 @@
+.espiagro-desktop-sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100dvh;
+  max-height: 100vh;
+  max-height: 100dvh;
+  min-height: 0;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background:
+    radial-gradient(circle at top right, rgba(157, 207, 79, 0.1), transparent 24%),
+    radial-gradient(circle at bottom left, rgba(36, 106, 138, 0.1), transparent 28%),
+    linear-gradient(180deg, #0d1713 0%, #13231c 58%, #183228 100%);
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow:
+    inset -1px 0 0 rgba(255, 255, 255, 0.03),
+    16px 0 38px rgba(8, 17, 12, 0.08);
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.18) transparent;
+}
+
+.espiagro-desktop-sidebar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.espiagro-desktop-sidebar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.espiagro-desktop-sidebar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+}
+
+.espiagro-desktop-sidebar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.24);
+}
+
+/* Marca */
+.espiagro-desktop-sidebar-brand {
+  flex-shrink: 0;
+  padding: 12px;
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at top right, rgba(157, 207, 79, 0.12), transparent 34%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.045));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.18);
+}
+
+.espiagro-desktop-sidebar-logo {
+  width: 100%;
+  height: 112px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.espiagro-desktop-sidebar-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 10px;
+}
+
+/* Navegação */
+.espiagro-desktop-sidebar-nav {
+  min-height: 0;
+  flex: 1 1 auto;
+  display: grid;
+  gap: 8px;
+  align-content: start;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 4px;
+  padding-bottom: 10px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.18) transparent;
+}
+
+.espiagro-desktop-sidebar-nav::-webkit-scrollbar {
+  width: 8px;
+}
+
+.espiagro-desktop-sidebar-nav::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+}
+
+.espiagro-desktop-sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  padding: 13px 14px;
+  border-radius: 18px;
+  border: 1px solid transparent;
+  color: #f3f8f3;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    background 0.18s ease,
+    border-color 0.18s ease,
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.espiagro-desktop-sidebar-link:hover {
+  transform: translateX(2px);
+  background: rgba(255, 255, 255, 0.065);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.espiagro-desktop-sidebar-link.active {
+  background:
+    radial-gradient(circle at top right, rgba(157, 207, 79, 0.18), transparent 42%),
+    linear-gradient(
+      135deg,
+      rgba(44, 129, 82, 0.45),
+      rgba(157, 207, 79, 0.22)
+    );
+  border-color: rgba(157, 207, 79, 0.3);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 10px 20px rgba(0, 0, 0, 0.18);
+}
+
+.espiagro-desktop-sidebar-icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  background:
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.12), transparent 50%),
+    rgba(255, 255, 255, 0.07);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.08rem;
+}
+
+.espiagro-desktop-sidebar-link.active .espiagro-desktop-sidebar-icon {
+  background:
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.22), transparent 52%),
+    rgba(157, 207, 79, 0.16);
+}
+
+.espiagro-desktop-sidebar-text {
+  min-width: 0;
+  display: grid;
+  gap: 3px;
+}
+
+.espiagro-desktop-sidebar-text strong {
+  color: #f3f8f3;
+  font-size: 0.96rem;
+  line-height: 1.2;
+}
+
+.espiagro-desktop-sidebar-text small {
+  color: rgba(226, 238, 229, 0.72);
+  font-size: 0.8rem;
+  line-height: 1.35;
+}
+
+/* Ações da conta */
+.espiagro-desktop-sidebar-actions {
+  flex-shrink: 0;
+  margin-top: auto;
+  display: grid;
+  gap: 10px;
+  padding-top: 14px;
+}
+
+.espiagro-desktop-sidebar-action {
+  width: 100%;
+  border-radius: 16px;
+  padding: 12px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.06);
+  color: #f3f8f3;
+  font-weight: 850;
+  cursor: pointer;
+  transition:
+    background 0.18s ease,
+    border-color 0.18s ease,
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.espiagro-desktop-sidebar-action:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+}
+
+.espiagro-desktop-sidebar-action.danger {
+  color: #ffd7d1;
+  border-color: rgba(185, 65, 47, 0.24);
+  background: rgba(185, 65, 47, 0.12);
+}
+
+.espiagro-desktop-sidebar-action.danger:hover {
+  background: rgba(185, 65, 47, 0.18);
+  border-color: rgba(185, 65, 47, 0.34);
+}
+
+/* Desktop somente */
+@media (min-width: 1181px) {
+  .espiagro-desktop-sidebar {
+    display: flex;
+  }
+}
+
+/* Ajuste para notebooks com altura menor */
+@media (min-width: 1181px) and (max-height: 760px) {
+  .espiagro-desktop-sidebar {
+    padding: 14px;
+    gap: 12px;
+  }
+
+  .espiagro-desktop-sidebar-brand {
+    padding: 10px;
+    border-radius: 20px;
+  }
+
+  .espiagro-desktop-sidebar-logo {
+    height: 88px;
+    border-radius: 16px;
+  }
+
+  .espiagro-desktop-sidebar-link {
+    padding: 11px 12px;
+    border-radius: 16px;
+  }
+
+  .espiagro-desktop-sidebar-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 14px;
+  }
+
+  .espiagro-desktop-sidebar-action {
+    padding: 11px 12px;
+  }
+}
+
+/* Mobile/tablet: nunca exibir menu lateral */
+@media (max-width: 1180px) {
+  .espiagro-desktop-sidebar {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    width: 0 !important;
+    min-width: 0 !important;
+    max-width: 0 !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    max-height: 0 !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+}

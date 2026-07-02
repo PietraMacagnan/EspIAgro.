@@ -1,0 +1,986 @@
+.espiagro-auth-page {
+  --login-page-bg:
+    radial-gradient(circle at top left, rgba(157, 207, 79, 0.14), transparent 26%),
+    radial-gradient(circle at bottom right, rgba(31, 107, 69, 0.1), transparent 28%),
+    linear-gradient(180deg, #f4faf2 0%, #e8f2e6 100%);
+  --login-dark-1: #0c1512;
+  --login-dark-2: #12201a;
+  --login-dark-3: #173027;
+  --login-surface: rgba(255, 255, 255, 0.97);
+  --login-border: rgba(23, 49, 38, 0.1);
+  --login-text: #183126;
+  --login-muted: #66786f;
+  --login-primary: #1f6b45;
+  --login-primary-strong: #174f34;
+  --login-accent: #9dcf4f;
+  --login-danger: #b9412f;
+  --login-info: #246a8a;
+  --login-shadow: 0 18px 38px rgba(18, 44, 32, 0.1);
+  --login-sidebar-text: #f5faf6;
+  --login-sidebar-muted: rgba(226, 238, 229, 0.78);
+  --login-sidebar-border: rgba(255, 255, 255, 0.08);
+
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(420px, 0.92fr);
+  background: var(--login-page-bg);
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  color: var(--login-text);
+  overflow-x: hidden;
+}
+
+.espiagro-auth-page * {
+  box-sizing: border-box;
+}
+
+.espiagro-auth-page button,
+.espiagro-auth-page input {
+  font: inherit;
+}
+
+.espiagro-auth-brand {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background:
+    radial-gradient(circle at top right, rgba(157, 207, 79, 0.1), transparent 20%),
+    linear-gradient(180deg, var(--login-dark-1) 0%, var(--login-dark-2) 56%, var(--login-dark-3) 100%);
+  color: var(--login-sidebar-text);
+  border-right: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.espiagro-auth-brand-card,
+.espiagro-auth-highlight,
+.espiagro-auth-footer-card {
+  border: 1px solid var(--login-sidebar-border);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.18);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+.espiagro-auth-brand-card,
+.espiagro-auth-footer-card {
+  border-radius: 20px;
+}
+
+.espiagro-auth-brand-card {
+  position: relative;
+  overflow: hidden;
+  padding: 26px;
+  background:
+    radial-gradient(circle at top right, rgba(157, 207, 79, 0.12), transparent 24%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.035));
+}
+
+.espiagro-auth-brand-card::after {
+  content: "";
+  position: absolute;
+  inset: auto -80px -100px auto;
+  width: 260px;
+  height: 260px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(157, 207, 79, 0.16), transparent 70%);
+  pointer-events: none;
+}
+
+.espiagro-auth-topline {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+}
+
+/* Logo principal da área visual do Login */
+.espiagro-auth-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.espiagro-auth-logo-spotlight {
+  width: 100%;
+  aspect-ratio: 2.2 / 1;
+  border-radius: 24px;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow:
+    0 24px 48px rgba(0, 0, 0, 0.32),
+    0 8px 18px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.espiagro-auth-logo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  background: transparent;
+}
+
+.espiagro-auth-logo-image-desktop {
+  display: block;
+}
+
+.espiagro-auth-logo-image-mobile {
+  display: none;
+}
+
+.espiagro-auth-logo-mark,
+.espiagro-auth-form-logo-fallback {
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  color: white;
+  background: linear-gradient(135deg, var(--login-primary), var(--login-accent));
+}
+
+.espiagro-auth-logo-mark {
+  width: 82px;
+  height: 82px;
+  border-radius: 18px;
+  font-size: 1.8rem;
+  letter-spacing: 0.04em;
+  box-shadow: 0 14px 24px rgba(31, 107, 69, 0.24);
+}
+
+.espiagro-auth-eyebrow {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.espiagro-auth-brand .espiagro-auth-eyebrow {
+  color: rgba(157, 207, 79, 0.96);
+}
+
+.espiagro-auth-form-card .espiagro-auth-eyebrow {
+  color: var(--login-primary);
+}
+
+.espiagro-auth-title {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+  margin: 0;
+  max-width: 620px;
+  color: #f7fbf8;
+  font-size: clamp(1.85rem, 3vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+
+.espiagro-auth-description {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+  margin: 14px 0 0;
+  max-width: 590px;
+  color: var(--login-sidebar-muted);
+  line-height: 1.65;
+  font-size: 0.98rem;
+}
+
+.espiagro-auth-highlights {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.espiagro-auth-highlight {
+  border-radius: 18px;
+  padding: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.espiagro-auth-highlight::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.95;
+  pointer-events: none;
+}
+
+.espiagro-auth-highlight.monitoramento {
+  background: linear-gradient(135deg, rgba(18, 73, 50, 0.88), rgba(29, 109, 75, 0.66));
+}
+
+.espiagro-auth-highlight.monitoramento::before {
+  background: radial-gradient(circle at top right, rgba(157, 207, 79, 0.18), transparent 40%);
+}
+
+.espiagro-auth-highlight.alertas {
+  background: linear-gradient(135deg, rgba(105, 54, 15, 0.88), rgba(170, 94, 26, 0.68));
+}
+
+.espiagro-auth-highlight.alertas::before {
+  background: radial-gradient(circle at top right, rgba(255, 201, 133, 0.18), transparent 40%);
+}
+
+.espiagro-auth-highlight.relatorios {
+  background: linear-gradient(135deg, rgba(20, 57, 76, 0.88), rgba(37, 105, 138, 0.68));
+}
+
+.espiagro-auth-highlight.relatorios::before {
+  background: radial-gradient(circle at top right, rgba(144, 212, 255, 0.16), transparent 40%);
+}
+
+.espiagro-auth-highlight strong,
+.espiagro-auth-highlight span {
+  position: relative;
+  z-index: 1;
+}
+
+.espiagro-auth-highlight strong {
+  display: block;
+  color: var(--login-sidebar-text);
+  margin-bottom: 8px;
+  font-size: 0.98rem;
+}
+
+.espiagro-auth-highlight span {
+  color: rgba(244, 248, 244, 0.86);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.espiagro-auth-footer-card {
+  padding: 18px;
+  background: linear-gradient(135deg, rgba(64, 101, 100, 0.72), rgba(101, 143, 142, 0.52));
+}
+
+.espiagro-auth-footer-card strong {
+  display: block;
+  color: var(--login-sidebar-text);
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.espiagro-auth-footer-card p {
+  margin: 0;
+  color: rgba(244, 248, 244, 0.86);
+  line-height: 1.55;
+}
+
+.espiagro-auth-form-wrap {
+  padding: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.espiagro-auth-form-card {
+  width: 100%;
+  max-width: 560px;
+  padding: 26px;
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at top right, rgba(157, 207, 79, 0.1), transparent 22%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.985), rgba(248, 251, 247, 0.985));
+  border: 1px solid var(--login-border);
+  box-shadow: var(--login-shadow);
+}
+
+.espiagro-auth-form-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+/* Logo pequena do card "Acessar sistema" */
+.espiagro-auth-form-logo {
+  width: min(100%, 390px);
+  height: 158px;
+  border-radius: 22px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, rgba(31, 107, 69, 0.1), rgba(157, 207, 79, 0.18));
+  border: 1px solid rgba(31, 107, 69, 0.1);
+  box-shadow:
+    0 18px 32px rgba(18, 44, 32, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  flex-shrink: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+.espiagro-auth-form-logo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.espiagro-auth-form-logo-image-desktop {
+  display: block;
+}
+
+.espiagro-auth-form-logo-image-mobile {
+  display: none;
+}
+
+.espiagro-auth-form-logo-fallback {
+  width: 88px;
+  height: 88px;
+  border-radius: 18px;
+  font-size: 1.9rem;
+}
+
+.espiagro-auth-form-card h1 {
+  margin: 0;
+  color: var(--login-text);
+  font-size: 1.8rem;
+  line-height: 1.1;
+}
+
+.espiagro-auth-form-card p {
+  color: var(--login-muted);
+  line-height: 1.55;
+}
+
+.espiagro-auth-form-description {
+  text-align: center;
+  margin: 10px 0 0;
+}
+
+.espiagro-auth-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 20px;
+  margin-bottom: 8px;
+  padding: 5px;
+  background: rgba(23, 49, 38, 0.04);
+  border: 1px solid rgba(23, 49, 38, 0.06);
+  border-radius: 16px;
+}
+
+.espiagro-auth-tab {
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--login-muted);
+  border-radius: 13px;
+  padding: 12px 10px;
+  font-weight: 900;
+  cursor: pointer;
+  transition:
+    color 0.18s ease,
+    background 0.18s ease,
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.espiagro-auth-tab:hover {
+  color: var(--login-text);
+}
+
+.espiagro-auth-tab.active {
+  background: white;
+  border-color: rgba(31, 107, 69, 0.1);
+  color: var(--login-primary-strong);
+  box-shadow: 0 10px 24px rgba(18, 44, 32, 0.06);
+}
+
+.espiagro-auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.espiagro-auth-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.espiagro-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.espiagro-field label {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--login-text);
+}
+
+.espiagro-input-wrap {
+  position: relative;
+}
+
+.espiagro-field input {
+  width: 100%;
+  border: 1px solid var(--login-border);
+  background: white;
+  color: var(--login-text);
+  border-radius: 14px;
+  padding: 13px 15px;
+  outline: none;
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    transform 0.18s ease;
+}
+
+.espiagro-field input.espiagro-input-with-action {
+  padding-right: 96px;
+}
+
+.espiagro-field input:focus {
+  border-color: rgba(31, 107, 69, 0.55);
+  box-shadow: 0 0 0 4px rgba(31, 107, 69, 0.1);
+  transform: translateY(-1px);
+}
+
+.espiagro-input-action {
+  position: absolute;
+  right: 9px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0;
+  background: transparent;
+  color: var(--login-primary);
+  font-weight: 800;
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 10px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.espiagro-input-action:hover {
+  background: rgba(31, 107, 69, 0.08);
+}
+
+.espiagro-field-error {
+  font-size: 0.84rem;
+  color: var(--login-danger);
+}
+
+.espiagro-submit-error,
+.espiagro-submit-message {
+  border-radius: 14px;
+  padding: 12px 14px;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  margin-top: 16px;
+}
+
+.espiagro-submit-error {
+  border: 1px solid rgba(185, 65, 47, 0.18);
+  background: rgba(185, 65, 47, 0.08);
+  color: var(--login-danger);
+}
+
+.espiagro-submit-message {
+  border: 1px solid rgba(31, 107, 69, 0.18);
+  background: rgba(31, 107, 69, 0.08);
+  color: var(--login-primary);
+}
+
+.espiagro-auth-submit {
+  margin-top: 6px;
+  border: 0;
+  border-radius: 14px;
+  padding: 14px 18px;
+  font-weight: 900;
+  color: #f7fbf6;
+  background: linear-gradient(135deg, #28a89b, #1f6b45);
+  transition:
+    transform 0.18s ease,
+    opacity 0.18s ease,
+    box-shadow 0.18s ease;
+  cursor: pointer;
+  box-shadow: 0 14px 26px rgba(31, 107, 69, 0.18);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.espiagro-auth-submit:hover:not(:disabled) {
+  transform: translateY(-1px);
+  opacity: 0.98;
+  box-shadow: 0 18px 30px rgba(31, 107, 69, 0.22);
+}
+
+.espiagro-auth-submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.espiagro-auth-link-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  margin-top: 14px;
+}
+
+.espiagro-auth-link-btn {
+  border: 0;
+  background: transparent;
+  color: var(--login-info);
+  font-weight: 800;
+  cursor: pointer;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.espiagro-auth-link-btn:hover {
+  text-decoration: underline;
+}
+
+/* Tablet */
+@media (max-width: 1120px) {
+  .espiagro-auth-page {
+    grid-template-columns: 1fr;
+  }
+
+  .espiagro-auth-brand {
+    padding: 18px 18px 0;
+  }
+
+  .espiagro-auth-form-wrap {
+    padding: 18px 18px 28px;
+  }
+
+  .espiagro-auth-highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .espiagro-auth-title {
+    max-width: none;
+  }
+}
+
+/* Mobile com imagem de fundo */
+@media (max-width: 760px) {
+  .espiagro-auth-page {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-height: 100dvh;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(5, 16, 11, 0.18) 0%,
+        rgba(5, 16, 11, 0.12) 26%,
+        rgba(5, 16, 11, 0.34) 52%,
+        rgba(232, 242, 230, 0.88) 78%,
+        rgba(232, 242, 230, 1) 100%
+      ),
+      url("/images/headers/mobile/loguin-mobile.jpeg");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+  }
+
+  .espiagro-auth-brand {
+    padding: 12px 18px 10px;
+    background: transparent;
+    border-right: 0;
+    gap: 18px;
+  }
+
+  .espiagro-auth-brand-card {
+    display: block;
+    padding: 0;
+    overflow: visible;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+
+  .espiagro-auth-brand-card::after {
+    display: none;
+  }
+
+  .espiagro-auth-topline {
+    justify-content: center;
+    width: 100%;
+    margin-bottom: -180px;
+    transform: translateY(-90px);
+  }
+
+  .espiagro-auth-logo {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 460px;
+  margin: 0 auto;
+}
+
+.espiagro-auth-logo-spotlight {
+  width: 100%;
+  max-width: 96vw;
+  aspect-ratio: 3.2 / 1;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  overflow: visible;
+}
+
+  .espiagro-auth-logo-image-desktop {
+    display: none;
+  }
+
+  .espiagro-auth-logo-image-mobile {
+    display: block;
+  }
+
+  .espiagro-auth-logo-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: transparent;
+    filter:
+      drop-shadow(0 14px 24px rgba(0, 0, 0, 0.34))
+      drop-shadow(0 2px 0 rgba(255, 255, 255, 0.08));
+  }
+
+  .espiagro-auth-brand .espiagro-auth-eyebrow {
+    margin-bottom: 10px;
+    color: rgba(245, 250, 246, 0.92);
+    text-shadow: 0 10px 24px rgba(0, 0, 0, 0.34);
+  }
+
+  .espiagro-auth-title {
+    max-width: 390px;
+    color: #ffffff;
+    font-size: 2.08rem;
+    line-height: 1.04;
+    letter-spacing: -0.035em;
+    text-shadow:
+      0 16px 34px rgba(0, 0, 0, 0.44),
+      0 2px 0 rgba(0, 0, 0, 0.12);
+  }
+
+  .espiagro-auth-description {
+    max-width: 380px;
+    margin-top: 14px;
+    color: rgba(255, 255, 255, 0.98);
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.62;
+    text-shadow:
+      0 14px 28px rgba(0, 0, 0, 0.46),
+      0 2px 6px rgba(0, 0, 0, 0.3);
+  }
+
+  .espiagro-auth-highlights {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 28px;
+  }
+
+  .espiagro-auth-highlight {
+    border-radius: 24px;
+    padding: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    box-shadow:
+      0 18px 34px rgba(0, 0, 0, 0.16),
+      inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  }
+
+  .espiagro-auth-highlight.monitoramento {
+    background:
+      radial-gradient(circle at top right, rgba(157, 207, 79, 0.18), transparent 38%),
+      linear-gradient(135deg, rgba(12, 87, 56, 0.86), rgba(32, 125, 78, 0.72));
+  }
+
+  .espiagro-auth-highlight.alertas {
+    background:
+      radial-gradient(circle at top right, rgba(255, 201, 133, 0.18), transparent 38%),
+      linear-gradient(135deg, rgba(115, 57, 13, 0.88), rgba(171, 96, 23, 0.72));
+  }
+
+  .espiagro-auth-highlight.relatorios {
+    background:
+      radial-gradient(circle at top right, rgba(144, 212, 255, 0.15), transparent 38%),
+      linear-gradient(135deg, rgba(18, 65, 84, 0.88), rgba(37, 105, 138, 0.72));
+  }
+
+  .espiagro-auth-highlight strong {
+    font-size: 1rem;
+  }
+
+  .espiagro-auth-highlight span {
+    font-size: 0.9rem;
+    line-height: 1.48;
+  }
+
+  .espiagro-auth-footer-card {
+    display: none;
+  }
+
+  .espiagro-auth-form-wrap {
+    padding: 18px 14px 32px;
+    align-items: flex-start;
+  }
+
+  .espiagro-auth-form-card {
+    position: relative;
+    width: 100%;
+    max-width: none;
+    padding: 22px;
+    border-radius: 30px;
+    background:
+      radial-gradient(circle at top right, rgba(157, 207, 79, 0.14), transparent 26%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(248, 251, 247, 0.9));
+    border: 1px solid rgba(255, 255, 255, 0.78);
+    box-shadow:
+      0 26px 60px rgba(14, 35, 24, 0.18),
+      inset 0 1px 0 rgba(255, 255, 255, 0.86);
+    -webkit-backdrop-filter: blur(16px) saturate(1.1);
+    backdrop-filter: blur(16px) saturate(1.1);
+  }
+
+  .espiagro-auth-form-card::before {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    border-radius: 24px;
+    border: 1px solid rgba(31, 107, 69, 0.06);
+    pointer-events: none;
+  }
+
+  .espiagro-auth-form-head {
+    position: relative;
+    z-index: 1;
+    gap: 9px;
+    margin-bottom: 10px;
+  }
+
+  .espiagro-auth-form-logo {
+    width: 112px;
+    height: 112px;
+    border-radius: 28px;
+    padding: 10px;
+    background:
+      radial-gradient(circle at top right, rgba(157, 207, 79, 0.18), transparent 42%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(237, 247, 235, 0.94));
+    border: 1px solid rgba(31, 107, 69, 0.1);
+    box-shadow:
+      0 16px 32px rgba(18, 44, 32, 0.12),
+      inset 0 1px 0 rgba(255, 255, 255, 0.92);
+  }
+
+  .espiagro-auth-form-logo-image-desktop {
+    display: none;
+  }
+
+  .espiagro-auth-form-logo-image-mobile {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .espiagro-auth-form-card .espiagro-auth-eyebrow {
+    display: none;
+  }
+
+  .espiagro-auth-form-card h1 {
+    color: #123126;
+    font-size: 1.68rem;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+  }
+
+  .espiagro-auth-form-description {
+    max-width: 300px;
+    margin: 4px auto 0;
+    color: #5f766b;
+    font-size: 0.92rem;
+    line-height: 1.45;
+  }
+
+  .espiagro-auth-tabs {
+    position: relative;
+    z-index: 1;
+    margin-top: 18px;
+    margin-bottom: 8px;
+    padding: 5px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 5px;
+    border-radius: 999px;
+    background:
+      linear-gradient(180deg, rgba(238, 246, 236, 0.82), rgba(236, 243, 235, 0.76));
+    border: 1px solid rgba(23, 49, 38, 0.07);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.74),
+      0 10px 22px rgba(18, 44, 32, 0.05);
+  }
+
+  .espiagro-auth-tab {
+    min-height: 44px;
+    border-radius: 999px;
+    padding: 10px 8px;
+    font-size: 0.88rem;
+  }
+
+  .espiagro-auth-tab.active {
+    background: rgba(255, 255, 255, 0.98);
+    color: var(--login-primary-strong);
+    box-shadow:
+      0 12px 24px rgba(18, 44, 32, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.92);
+  }
+
+  .espiagro-auth-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .espiagro-auth-form {
+    position: relative;
+    z-index: 1;
+    gap: 14px;
+    margin-top: 18px;
+  }
+
+  .espiagro-field label {
+    font-size: 0.88rem;
+  }
+
+  .espiagro-field input {
+    min-height: 52px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.96);
+    border-color: rgba(23, 49, 38, 0.09);
+  }
+
+  .espiagro-auth-submit {
+    min-height: 52px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #28a89b, #1f6b45);
+    box-shadow: 0 16px 30px rgba(31, 107, 69, 0.2);
+  }
+
+  .espiagro-auth-link-row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .espiagro-auth-brand,
+  .espiagro-auth-form-wrap {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .espiagro-auth-title {
+    font-size: 1.9rem;
+  }
+
+  .espiagro-auth-description {
+    font-size: 0.96rem;
+  }
+
+  .espiagro-auth-form-card {
+    padding: 21px;
+  }
+
+  .espiagro-auth-form-card h1 {
+    font-size: 1.58rem;
+  }
+
+  .espiagro-auth-form-logo {
+    width: 106px;
+    height: 106px;
+    border-radius: 26px;
+  }
+
+  .espiagro-auth-tab {
+    font-size: 0.82rem;
+    padding: 10px 6px;
+  }
+}
+
+@media (max-width: 390px) {
+  .espiagro-auth-brand,
+  .espiagro-auth-form-wrap {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .espiagro-auth-brand {
+    padding-top: 30px;
+  }
+
+  .espiagro-auth-logo {
+    max-width: 370px;
+  }
+
+  .espiagro-auth-logo-spotlight {
+    width: 100%;
+    max-width: 96vw;
+  }
+
+  .espiagro-auth-title {
+    font-size: 1.72rem;
+  }
+
+  .espiagro-auth-description {
+    font-size: 0.9rem;
+  }
+
+  .espiagro-auth-highlights {
+    margin-top: 24px;
+  }
+
+  .espiagro-auth-form-card {
+    padding: 18px;
+    border-radius: 24px;
+  }
+
+  .espiagro-auth-form-card h1 {
+    font-size: 1.46rem;
+  }
+
+  .espiagro-auth-form-logo {
+    width: 98px;
+    height: 98px;
+    border-radius: 24px;
+  }
+
+  .espiagro-auth-tab {
+    min-height: 42px;
+    font-size: 0.76rem;
+  }
+}

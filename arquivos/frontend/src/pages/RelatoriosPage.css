@@ -1,0 +1,1873 @@
+.espiagro-relatorios-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* =========================================================
+   BASE VISUAL
+========================================================= */
+
+.espiagro-relatorios-hero,
+.espiagro-summary-card,
+.espiagro-filter-card,
+.espiagro-state-card,
+.espiagro-empty-card,
+.espiagro-report-card,
+.espiagro-generation-card,
+.espiagro-status-box,
+.espiagro-detail-box,
+.espiagro-note-box,
+.espiagro-report-image-card,
+.espiagro-report-sheet,
+.espiagro-report-sheet-action-panel,
+.espiagro-reference-card {
+  border: 1px solid rgba(22, 49, 38, 0.1);
+  border-radius: 24px;
+  box-shadow:
+    0 16px 34px rgba(19, 48, 34, 0.075),
+    inset 0 1px 0 rgba(255, 255, 255, 0.58);
+}
+
+.espiagro-summary-card,
+.espiagro-filter-card,
+.espiagro-state-card,
+.espiagro-empty-card,
+.espiagro-report-card,
+.espiagro-generation-card,
+.espiagro-status-box,
+.espiagro-detail-box,
+.espiagro-note-box,
+.espiagro-report-image-card,
+.espiagro-report-sheet-action-panel,
+.espiagro-reference-card {
+  background:
+    radial-gradient(circle at top right, rgba(216, 116, 27, 0.08), transparent 30%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(255, 250, 244, 0.98));
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.espiagro-relatorios-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+  gap: 16px;
+  color: #fff7f1;
+  background:
+    radial-gradient(circle at top right, rgba(255, 193, 117, 0.2), transparent 26%),
+    radial-gradient(circle at bottom left, rgba(255, 147, 41, 0.12), transparent 30%),
+    linear-gradient(135deg, #5d2d0f 0%, #9b4d15 52%, #d8741b 100%);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.espiagro-relatorios-hero::after {
+  content: "";
+  position: absolute;
+  right: -82px;
+  bottom: -92px;
+  width: 260px;
+  height: 260px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.15), transparent 70%);
+  pointer-events: none;
+}
+
+.espiagro-relatorios-hero-main,
+.espiagro-relatorios-hero-side {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+}
+
+.espiagro-relatorios-kicker,
+.espiagro-panel-kicker {
+  display: inline-block;
+  font-size: 0.76rem;
+  font-weight: 950;
+  letter-spacing: 0.065em;
+  text-transform: uppercase;
+}
+
+.espiagro-relatorios-kicker {
+  color: rgba(255, 241, 232, 0.88);
+}
+
+.espiagro-panel-kicker {
+  color: #b85e16;
+}
+
+.espiagro-relatorios-title {
+  margin: 10px 0 8px;
+  max-width: 760px;
+  color: #fffaf6;
+  font-size: clamp(1.7rem, 3vw, 2.7rem);
+  line-height: 1.06;
+  letter-spacing: -0.035em;
+}
+
+.espiagro-relatorios-description {
+  margin: 0;
+  max-width: 760px;
+  color: rgba(255, 242, 235, 0.88);
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+.espiagro-relatorios-band {
+  margin-top: 16px;
+  width: fit-content;
+  max-width: 100%;
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 16px;
+  color: rgba(255, 247, 241, 0.96);
+  background: rgba(255, 255, 255, 0.11);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  font-size: 0.9rem;
+  font-weight: 850;
+}
+
+.espiagro-relatorios-actions,
+.espiagro-filter-actions,
+.espiagro-generation-actions,
+.espiagro-report-sheet-action-grid,
+.espiagro-state-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.espiagro-relatorios-actions {
+  margin-top: 18px;
+}
+
+.espiagro-relatorios-hero-side {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+
+.espiagro-mini-card {
+  border-radius: 18px;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.11);
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+.espiagro-mini-label {
+  display: block;
+  margin-bottom: 6px;
+  color: rgba(255, 242, 235, 0.74);
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+
+.espiagro-mini-card strong {
+  display: block;
+  color: #ffffff;
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
+/* =========================================================
+   BOTÕES
+========================================================= */
+
+.espiagro-btn,
+.espiagro-report-details-button,
+.espiagro-summary-button,
+.espiagro-report-sheet-close {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.espiagro-btn,
+.espiagro-report-details-button {
+  border: 0;
+  border-radius: 17px;
+  padding: 12px 16px;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--text, #123326);
+  font-weight: 950;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform 0.18s ease,
+    opacity 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease;
+}
+
+.espiagro-btn:hover,
+.espiagro-report-details-button:hover,
+.espiagro-report-sheet-close:hover {
+  transform: translateY(-1px);
+  opacity: 0.97;
+}
+
+.espiagro-btn:disabled,
+.espiagro-report-details-button:disabled {
+  opacity: 0.58;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.espiagro-btn-primary {
+  background: linear-gradient(135deg, #ffe0b8, #ffc06e);
+  color: #5d2d0f;
+  box-shadow: 0 12px 24px rgba(255, 192, 110, 0.2);
+}
+
+.espiagro-btn-secondary {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #fffaf6;
+}
+
+.espiagro-btn-ghost,
+.espiagro-btn-retry {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid var(--border, rgba(22, 49, 38, 0.12));
+  color: var(--text, #123326);
+}
+
+.espiagro-btn-warning {
+  background: rgba(201, 130, 22, 0.12);
+  border: 1px solid rgba(201, 130, 22, 0.22);
+  color: var(--warning, #9a620f);
+}
+
+.espiagro-btn-info {
+  background: rgba(36, 106, 138, 0.12);
+  border: 1px solid rgba(36, 106, 138, 0.22);
+  color: var(--info, #246a8a);
+}
+
+.espiagro-btn-danger {
+  background: rgba(185, 65, 47, 0.1);
+  border: 1px solid rgba(185, 65, 47, 0.22);
+  color: var(--danger, #b9412f);
+}
+
+/* =========================================================
+   RESUMO
+========================================================= */
+
+.espiagro-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.espiagro-summary-card {
+  padding: 18px;
+  border-radius: 22px;
+}
+
+.espiagro-summary-button {
+  width: 100%;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.espiagro-summary-card h3 {
+  margin: 0 0 8px;
+  color: var(--text, #123326);
+  line-height: 1.2;
+}
+
+.espiagro-summary-card p {
+  margin: 0;
+  color: var(--muted, #718179);
+  line-height: 1.55;
+}
+
+.espiagro-summary-value {
+  display: block;
+  margin: 10px 0 8px;
+  color: var(--text, #123326);
+  font-size: 2rem;
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+
+.espiagro-tone-green {
+  border-top: 4px solid var(--primary, #1f6b45);
+}
+
+.espiagro-tone-amber {
+  border-top: 4px solid var(--warning, #c98216);
+}
+
+.espiagro-tone-red {
+  border-top: 4px solid var(--danger, #b9412f);
+}
+
+.espiagro-tone-blue {
+  border-top: 4px solid var(--info, #246a8a);
+}
+
+/* =========================================================
+   NOTIFICAÇÕES / PROGRESSO
+========================================================= */
+
+.espiagro-generation-stack {
+  display: grid;
+  gap: 10px;
+}
+
+.espiagro-generation-card {
+  padding: 14px;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  border-radius: 22px;
+}
+
+.espiagro-generation-card.running {
+  border-color: rgba(201, 130, 22, 0.2);
+  background:
+    radial-gradient(circle at top right, rgba(255, 193, 117, 0.18), transparent 30%),
+    linear-gradient(180deg, #fffdf8, #fff3df);
+}
+
+.espiagro-generation-card.done {
+  border-color: rgba(31, 107, 69, 0.18);
+  background:
+    radial-gradient(circle at top right, rgba(157, 207, 79, 0.16), transparent 30%),
+    linear-gradient(180deg, #fbfff8, #f2faec);
+}
+
+.espiagro-generation-card.error {
+  border-color: rgba(185, 65, 47, 0.18);
+  background:
+    radial-gradient(circle at top right, rgba(185, 65, 47, 0.12), transparent 30%),
+    linear-gradient(180deg, #fffafa, #fff1ef);
+}
+
+.espiagro-generation-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  color: var(--text, #123326);
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid var(--border, rgba(22, 49, 38, 0.12));
+  font-weight: 950;
+}
+
+.espiagro-generation-body {
+  min-width: 0;
+}
+
+.espiagro-generation-body span {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--muted, #718179);
+  font-size: 0.78rem;
+  font-weight: 850;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.espiagro-generation-body strong {
+  display: block;
+  color: var(--text, #123326);
+  line-height: 1.25;
+  word-break: break-word;
+}
+
+.espiagro-generation-body p {
+  margin: 4px 0 0;
+  color: var(--muted, #718179);
+  line-height: 1.45;
+}
+
+.espiagro-generation-body small {
+  display: block;
+  margin-top: 5px;
+  color: rgba(22, 49, 38, 0.62);
+  line-height: 1.35;
+}
+
+.espiagro-generation-progress {
+  margin-top: 10px;
+  display: grid;
+  gap: 6px;
+}
+
+.espiagro-generation-progress-track {
+  width: 100%;
+  height: 9px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(22, 49, 38, 0.08);
+  border: 1px solid rgba(22, 49, 38, 0.06);
+}
+
+.espiagro-generation-progress-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #1f6b45, #9dcf4f, #ffc06e);
+  transition: width 0.35s ease;
+}
+
+.espiagro-generation-progress-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.espiagro-generation-progress-footer small {
+  margin: 0;
+  font-weight: 800;
+}
+
+/* =========================================================
+   FEEDBACKS
+========================================================= */
+
+.espiagro-feedback-message,
+.espiagro-feedback-error {
+  padding: 12px 14px;
+  border-radius: 16px;
+  font-size: 0.94rem;
+  line-height: 1.45;
+}
+
+.espiagro-feedback-message {
+  background: rgba(31, 107, 69, 0.08);
+  border: 1px solid rgba(31, 107, 69, 0.14);
+  color: var(--primary, #1f6b45);
+}
+
+.espiagro-feedback-error {
+  background: rgba(185, 65, 47, 0.08);
+  border: 1px solid rgba(185, 65, 47, 0.16);
+  color: var(--danger, #b9412f);
+}
+
+/* =========================================================
+   BUSCA DE RELATÓRIOS - APP NATIVO
+========================================================= */
+
+.espiagro-report-search-card {
+  position: relative;
+  overflow: hidden;
+  padding: 18px;
+  border: 1px solid rgba(22, 49, 38, 0.1);
+  border-radius: 26px;
+  background:
+    radial-gradient(circle at top right, rgba(36, 106, 138, 0.1), transparent 30%),
+    radial-gradient(circle at bottom left, rgba(157, 207, 79, 0.1), transparent 28%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(247, 251, 246, 0.98));
+  box-shadow:
+    0 16px 34px rgba(19, 48, 34, 0.075),
+    inset 0 1px 0 rgba(255, 255, 255, 0.58);
+}
+
+.espiagro-report-search-card::after {
+  content: "";
+  position: absolute;
+  right: -70px;
+  bottom: -82px;
+  width: 190px;
+  height: 190px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(31, 107, 69, 0.1), transparent 68%);
+  pointer-events: none;
+}
+
+.espiagro-report-search-header,
+.espiagro-report-search-row,
+.espiagro-report-active-filter-row,
+.espiagro-report-search-help {
+  position: relative;
+  z-index: 1;
+}
+
+.espiagro-report-search-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.espiagro-report-search-header-content {
+  min-width: 0;
+}
+
+.espiagro-report-search-title {
+  margin: 4px 0 6px;
+  color: var(--text, #123326);
+  font-size: clamp(1.18rem, 2vw, 1.55rem);
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+}
+
+.espiagro-report-search-description {
+  margin: 0;
+  max-width: 760px;
+  color: var(--muted, #718179);
+  font-size: 0.94rem;
+  line-height: 1.5;
+}
+
+.espiagro-report-search-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: end;
+}
+
+.espiagro-report-search-input-wrap {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+
+.espiagro-report-search-input-label {
+  color: var(--text, #123326);
+  font-size: 0.88rem;
+  font-weight: 900;
+  line-height: 1.25;
+}
+
+.espiagro-report-search-input-box {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  min-height: 52px;
+  padding: 0 10px 0 14px;
+  border: 1px solid rgba(22, 49, 38, 0.12);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow:
+    0 10px 22px rgba(19, 48, 34, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    transform 0.18s ease;
+}
+
+.espiagro-report-search-input-box:focus-within {
+  border-color: rgba(31, 107, 69, 0.3);
+  box-shadow:
+    0 12px 26px rgba(19, 48, 34, 0.08),
+    0 0 0 4px rgba(31, 107, 69, 0.08);
+  transform: translateY(-1px);
+}
+
+.espiagro-report-search-input-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  margin-right: 6px;
+  border-radius: 12px;
+  background: rgba(36, 106, 138, 0.09);
+  color: var(--info, #246a8a);
+  font-size: 0.95rem;
+}
+
+.espiagro-report-search-input-box input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: var(--text, #123326);
+  font-size: 0.96rem;
+  font-weight: 700;
+}
+
+.espiagro-report-search-input-box input::placeholder {
+  color: rgba(22, 49, 38, 0.42);
+  font-weight: 600;
+}
+
+.espiagro-report-search-clear-button {
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 13px;
+  background: rgba(22, 49, 38, 0.08);
+  color: var(--text, #123326);
+  cursor: pointer;
+  font-size: 1.25rem;
+  line-height: 1;
+  display: inline-grid;
+  place-items: center;
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.espiagro-report-search-clear-button:hover {
+  transform: translateY(-1px);
+  background: rgba(22, 49, 38, 0.12);
+}
+
+.espiagro-report-filter-button {
+  min-height: 52px;
+  border: 0;
+  border-radius: 18px;
+  padding: 0 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  white-space: nowrap;
+  cursor: pointer;
+  color: #ffffff;
+  font-weight: 950;
+  background: linear-gradient(135deg, #1f6b45, #2f8a59);
+  box-shadow: 0 14px 26px rgba(31, 107, 69, 0.18);
+  transition:
+    transform 0.18s ease,
+    opacity 0.18s ease,
+    box-shadow 0.18s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.espiagro-report-filter-button:hover {
+  transform: translateY(-1px);
+  opacity: 0.97;
+  box-shadow: 0 16px 30px rgba(31, 107, 69, 0.22);
+}
+
+.espiagro-report-filter-button-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.espiagro-report-filter-button-text::before {
+  content: "☰";
+  font-size: 0.95rem;
+  line-height: 1;
+  opacity: 0.9;
+}
+
+.espiagro-report-filter-button-badge {
+  min-width: 24px;
+  height: 24px;
+  padding: 0 7px;
+  border-radius: 999px;
+  display: inline-grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.92);
+  color: #1f6b45;
+  font-size: 0.78rem;
+  line-height: 1;
+}
+
+.espiagro-report-active-filter-row {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.espiagro-report-filter-pill {
+  min-height: 38px;
+  max-width: 100%;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(22, 49, 38, 0.1);
+  color: var(--text, #123326);
+  box-shadow: 0 8px 18px rgba(19, 48, 34, 0.05);
+}
+
+.espiagro-report-filter-pill-label {
+  color: var(--muted, #718179);
+  font-size: 0.74rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.045em;
+}
+
+.espiagro-report-filter-pill strong {
+  min-width: 0;
+  color: var(--text, #123326);
+  font-size: 0.84rem;
+  line-height: 1.25;
+  word-break: break-word;
+}
+
+.espiagro-report-clear-filter-button {
+  min-height: 38px;
+  border: 1px solid rgba(185, 65, 47, 0.16);
+  border-radius: 999px;
+  padding: 8px 12px;
+  background: rgba(185, 65, 47, 0.08);
+  color: var(--danger, #b9412f);
+  font-size: 0.84rem;
+  font-weight: 950;
+  cursor: pointer;
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.espiagro-report-clear-filter-button:hover {
+  transform: translateY(-1px);
+  background: rgba(185, 65, 47, 0.11);
+}
+
+.espiagro-report-search-help {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+  padding: 12px 14px;
+  border-radius: 18px;
+  background: rgba(36, 106, 138, 0.07);
+  border: 1px solid rgba(36, 106, 138, 0.1);
+}
+
+.espiagro-report-search-help-dot {
+  width: 9px;
+  height: 9px;
+  margin-top: 7px;
+  border-radius: 999px;
+  background: var(--info, #246a8a);
+  box-shadow: 0 0 0 5px rgba(36, 106, 138, 0.1);
+}
+
+.espiagro-report-search-help p {
+  margin: 0;
+  color: var(--muted, #718179);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.espiagro-report-search-help strong {
+  color: var(--text, #123326);
+}
+
+/* Responsivo da busca */
+@media (max-width: 840px) {
+  .espiagro-report-search-card {
+    padding: 16px;
+    border-radius: 24px;
+  }
+
+  .espiagro-report-search-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .espiagro-report-filter-button {
+    width: 100%;
+  }
+
+  .espiagro-report-search-title {
+    font-size: 1.35rem;
+  }
+
+  .espiagro-report-search-description {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .espiagro-report-search-card {
+    padding: 15px;
+    border-radius: 22px;
+  }
+
+  .espiagro-report-search-header {
+    margin-bottom: 14px;
+  }
+
+  .espiagro-report-search-title {
+    font-size: 1.26rem;
+  }
+
+  .espiagro-report-search-description {
+    font-size: 0.88rem;
+    line-height: 1.48;
+  }
+
+  .espiagro-report-search-input-label {
+    font-size: 0.84rem;
+  }
+
+  .espiagro-report-search-input-box {
+    min-height: 50px;
+    border-radius: 17px;
+  }
+
+  .espiagro-report-search-input-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 11px;
+    font-size: 0.88rem;
+  }
+
+  .espiagro-report-filter-button {
+    min-height: 50px;
+    border-radius: 17px;
+  }
+
+  .espiagro-report-active-filter-row {
+    gap: 7px;
+  }
+
+  .espiagro-report-filter-pill {
+    width: 100%;
+    align-items: flex-start;
+    justify-content: space-between;
+    border-radius: 16px;
+  }
+
+  .espiagro-report-filter-pill strong {
+    text-align: right;
+  }
+
+  .espiagro-report-clear-filter-button {
+    width: 100%;
+    border-radius: 16px;
+  }
+
+  .espiagro-report-search-help {
+    border-radius: 16px;
+  }
+}
+
+/* =========================================================
+   FILTROS
+========================================================= */
+
+.espiagro-filter-card {
+  padding: 18px;
+  border-radius: 24px;
+}
+
+.espiagro-filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.espiagro-filter-header h3 {
+  margin: 0 0 8px;
+  color: var(--text, #123326);
+  line-height: 1.2;
+}
+
+.espiagro-filter-header p {
+  margin: 0;
+  max-width: 760px;
+  color: var(--muted, #718179);
+  line-height: 1.55;
+}
+
+.espiagro-filter-fields {
+  display: grid;
+  grid-template-columns: 1.3fr 0.85fr 0.85fr;
+  gap: 14px;
+}
+
+.espiagro-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.espiagro-field label {
+  color: var(--text, #123326);
+  font-size: 0.9rem;
+  font-weight: 850;
+}
+
+.espiagro-field input,
+.espiagro-field select {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid var(--border, rgba(22, 49, 38, 0.12));
+  border-radius: 16px;
+  padding: 12px 14px;
+  background: #ffffff;
+  color: var(--text, #123326);
+  outline: none;
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.espiagro-field input:focus,
+.espiagro-field select:focus {
+  border-color: rgba(216, 116, 27, 0.36);
+  box-shadow: 0 0 0 4px rgba(216, 116, 27, 0.08);
+}
+
+.espiagro-active-filters {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.espiagro-filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 850;
+  background: rgba(216, 116, 27, 0.08);
+  color: #b85e16;
+  border: 1px solid rgba(216, 116, 27, 0.14);
+}
+
+/* =========================================================
+   ESTADOS
+========================================================= */
+
+.espiagro-state-card,
+.espiagro-empty-card {
+  padding: 20px;
+  text-align: center;
+}
+
+.espiagro-state-card h2 {
+  margin: 0 0 8px;
+  color: var(--text, #123326);
+  line-height: 1.2;
+}
+
+.espiagro-state-card p,
+.espiagro-empty-card p {
+  margin: 0;
+  color: var(--muted, #718179);
+  line-height: 1.55;
+}
+
+.espiagro-state-actions {
+  margin-top: 18px;
+  justify-content: center;
+}
+
+.espiagro-empty-card {
+  border-style: dashed;
+}
+
+/* =========================================================
+   LISTA DE RELATÓRIOS
+========================================================= */
+
+.espiagro-report-list {
+  display: grid;
+  gap: 14px;
+}
+
+.espiagro-report-card {
+  position: relative;
+  overflow: hidden;
+  padding: 16px;
+  border-radius: 26px;
+  border-left-width: 6px;
+}
+
+.espiagro-report-card::after {
+  content: "";
+  position: absolute;
+  inset: auto -44px -54px auto;
+  width: 150px;
+  height: 150px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(216, 116, 27, 0.11), transparent 68%);
+  pointer-events: none;
+}
+
+.espiagro-report-card-green {
+  border-left-color: var(--primary, #1f6b45);
+}
+
+.espiagro-report-card-amber {
+  border-left-color: var(--warning, #c98216);
+}
+
+.espiagro-report-card-red {
+  border-left-color: var(--danger, #b9412f);
+}
+
+.espiagro-report-card-blue {
+  border-left-color: var(--info, #246a8a);
+}
+
+.espiagro-report-card-main {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+}
+
+.espiagro-report-card-icon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: rgba(36, 106, 138, 0.1);
+  border: 1px solid rgba(36, 106, 138, 0.12);
+  font-size: 1.25rem;
+}
+
+.espiagro-report-card-content {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+}
+
+.espiagro-report-card-content h3 {
+  margin: 0;
+  color: var(--text, #123326);
+  font-size: clamp(1.1rem, 4.8vw, 1.36rem);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  word-break: break-word;
+}
+
+.espiagro-report-card-meta {
+  margin: 0;
+  color: var(--muted, #718179);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.espiagro-report-card-summary {
+  margin: 0;
+  color: var(--muted, #718179);
+  font-size: 0.96rem;
+  line-height: 1.56;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.espiagro-report-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.espiagro-report-info-chip {
+  padding: 10px 11px;
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at top right, rgba(157, 207, 79, 0.1), transparent 32%),
+    linear-gradient(180deg, rgba(247, 251, 246, 0.96), rgba(239, 247, 238, 0.96));
+  border: 1px solid rgba(22, 49, 38, 0.08);
+  min-width: 0;
+}
+
+.espiagro-report-info-chip span {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--muted, #718179);
+  font-size: 0.74rem;
+  line-height: 1.25;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.045em;
+}
+
+.espiagro-report-info-chip strong {
+  display: block;
+  color: var(--text, #123326);
+  font-size: 0.92rem;
+  line-height: 1.25;
+  word-break: break-word;
+}
+
+.espiagro-report-info-chip small {
+  margin-top: 4px;
+  color: rgba(22, 49, 38, 0.64);
+  font-size: 0.78rem;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.espiagro-report-details-button {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  margin-top: 14px;
+  background: linear-gradient(135deg, #1f6b45, #2f8a59);
+  color: #ffffff;
+  box-shadow: 0 14px 26px rgba(31, 107, 69, 0.18);
+}
+
+/* =========================================================
+   BADGES
+========================================================= */
+
+.espiagro-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 76px;
+  max-width: 100%;
+  padding: 7px 11px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 950;
+  line-height: 1.25;
+  white-space: nowrap;
+}
+
+.espiagro-badge-red {
+  background: rgba(185, 65, 47, 0.12);
+  color: var(--danger, #b9412f);
+}
+
+.espiagro-badge-amber {
+  background: rgba(201, 130, 22, 0.14);
+  color: var(--warning, #c98216);
+}
+
+.espiagro-badge-blue {
+  background: rgba(36, 106, 138, 0.12);
+  color: var(--info, #246a8a);
+}
+
+.espiagro-badge-green {
+  background: rgba(31, 107, 69, 0.12);
+  color: var(--primary, #1f6b45);
+}
+
+/* =========================================================
+   BOTTOM SHEET / DETALHES DO RELATÓRIO
+========================================================= */
+
+.espiagro-report-sheet-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1600;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 18px;
+  background: rgba(8, 17, 12, 0.48);
+  -webkit-backdrop-filter: blur(9px);
+  backdrop-filter: blur(9px);
+  overscroll-behavior: contain;
+}
+
+.espiagro-report-sheet {
+  width: min(920px, 100%);
+  max-height: min(88vh, 820px);
+  min-height: 0;
+  overflow: hidden;
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at top right, rgba(216, 116, 27, 0.13), transparent 28%),
+    linear-gradient(180deg, #fffdf9 0%, #fff7ed 100%);
+  border: 1px solid rgba(22, 49, 38, 0.12);
+  box-shadow: 0 30px 80px rgba(8, 17, 12, 0.34);
+  display: flex;
+  flex-direction: column;
+}
+
+.espiagro-report-sheet-handle {
+  width: 48px;
+  height: 5px;
+  margin: 10px auto 0;
+  border-radius: 999px;
+  background: rgba(22, 49, 38, 0.18);
+}
+
+.espiagro-report-sheet-header {
+  flex: 0 0 auto;
+  padding: 16px 18px 14px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: start;
+  border-bottom: 1px solid rgba(22, 49, 38, 0.08);
+}
+
+.espiagro-report-sheet-header h2 {
+  margin: 0;
+  color: var(--text, #123326);
+  font-size: clamp(1.16rem, 5vw, 1.8rem);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  word-break: break-word;
+}
+
+.espiagro-report-sheet-header p {
+  margin: 8px 0 0;
+  color: var(--muted, #718179);
+  line-height: 1.5;
+}
+
+.espiagro-report-sheet-close {
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(22, 49, 38, 0.1);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--text, #123326);
+  cursor: pointer;
+  font-size: 1.55rem;
+  line-height: 1;
+  display: inline-grid;
+  place-items: center;
+  box-shadow: 0 8px 18px rgba(19, 48, 34, 0.08);
+}
+
+.espiagro-report-sheet-scroll {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 22px 18px;
+  display: grid;
+  gap: 14px;
+  scroll-padding-top: 20px;
+  overscroll-behavior: contain;
+}
+
+.espiagro-report-sheet-scroll > *:first-child {
+  margin-top: 6px;
+}
+
+.espiagro-report-sheet-scroll .espiagro-phenology-card,
+.espiagro-report-sheet-scroll .espiagro-phenology-badge,
+.espiagro-report-sheet-scroll .espiagro-phenology {
+  flex-shrink: 0;
+  overflow: visible;
+}
+
+.espiagro-report-sheet-footer {
+  flex: 0 0 auto;
+  padding: 12px 16px calc(14px + env(safe-area-inset-bottom));
+  border-top: 1px solid rgba(22, 49, 38, 0.08);
+  background:
+    linear-gradient(180deg, rgba(255, 253, 249, 0.92), rgba(255, 250, 244, 0.98));
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 -14px 28px rgba(19, 48, 34, 0.08);
+}
+
+.espiagro-report-sheet-footer .espiagro-btn {
+  width: 100%;
+}
+
+.espiagro-report-sheet-action-panel {
+  padding: 16px;
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at top right, rgba(31, 107, 69, 0.11), transparent 30%),
+    linear-gradient(180deg, rgba(247, 251, 246, 0.98), rgba(239, 247, 238, 0.98));
+}
+
+.espiagro-report-sheet-action-panel > strong {
+  display: block;
+  color: var(--text, #123326);
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.espiagro-report-sheet-action-panel > p {
+  margin: 6px 0 14px;
+  color: var(--muted, #718179);
+  line-height: 1.5;
+}
+
+.espiagro-report-sheet-action-grid {
+  align-items: stretch;
+}
+
+.espiagro-report-sheet-action-grid .espiagro-btn {
+  flex: 1 1 190px;
+}
+
+.espiagro-report-sheet-footer .espiagro-report-sheet-action-panel {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+}
+
+.espiagro-report-sheet-footer .espiagro-report-sheet-action-panel > strong {
+  margin-bottom: 3px;
+  font-size: 0.92rem;
+}
+
+.espiagro-report-sheet-footer .espiagro-report-sheet-action-panel > p {
+  margin: 0 0 10px;
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+
+.espiagro-report-sheet-footer .espiagro-report-sheet-action-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  align-items: stretch;
+}
+
+.espiagro-report-sheet-footer .espiagro-report-sheet-action-grid .espiagro-btn {
+  width: 100%;
+  min-height: 42px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  font-size: 0.84rem;
+  line-height: 1.25;
+}
+
+/* =========================================================
+   DETALHES INTERNOS
+========================================================= */
+
+.espiagro-status-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.espiagro-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.espiagro-status-box,
+.espiagro-detail-box {
+  padding: 14px;
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at top right, rgba(216, 116, 27, 0.06), transparent 30%),
+    linear-gradient(180deg, #fffdf9, #fbf6f2);
+}
+
+.espiagro-status-label,
+.espiagro-detail-label {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--muted, #718179);
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+
+.espiagro-detail-value {
+  display: block;
+  color: var(--text, #123326);
+  font-weight: 850;
+  line-height: 1.42;
+  word-break: break-word;
+}
+
+.espiagro-status-box p {
+  margin: 10px 0 0;
+  color: var(--muted, #718179);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.espiagro-note-box {
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: rgba(216, 116, 27, 0.06);
+  border: 1px solid rgba(216, 116, 27, 0.12);
+}
+
+.espiagro-note-box strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text, #123326);
+}
+
+.espiagro-note-box p {
+  margin: 8px 0 0;
+  color: var(--muted, #718179);
+  line-height: 1.55;
+  word-break: break-word;
+}
+
+.espiagro-note-box ul {
+  margin: 8px 0 0;
+  padding-left: 18px;
+}
+
+.espiagro-note-box li {
+  color: var(--muted, #718179);
+  line-height: 1.5;
+  margin-bottom: 6px;
+  word-break: break-word;
+}
+
+.espiagro-report-image-card {
+  padding: 14px;
+  display: grid;
+  gap: 12px;
+  background:
+    radial-gradient(circle at top right, rgba(36, 106, 138, 0.12), transparent 30%),
+    linear-gradient(180deg, #fbfdff, #eef7fb);
+}
+
+.espiagro-report-image-card strong {
+  display: block;
+  color: var(--text, #123326);
+  margin-bottom: 6px;
+}
+
+.espiagro-report-image-card p {
+  margin: 0;
+  color: var(--muted, #718179);
+  line-height: 1.5;
+}
+
+.espiagro-report-image-card img {
+  width: 100%;
+  max-height: 260px;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 1px solid rgba(22, 49, 38, 0.1);
+}
+
+.espiagro-reference-list {
+  display: grid;
+  gap: 10px;
+}
+
+.espiagro-reference-card {
+  padding: 12px;
+  border-radius: 16px;
+  box-shadow: none;
+}
+
+.espiagro-reference-card strong {
+  margin: 0;
+  color: var(--text, #123326);
+}
+
+.espiagro-reference-card p {
+  margin: 5px 0 0;
+  color: var(--muted, #718179);
+  line-height: 1.45;
+}
+
+.espiagro-reference-card small {
+  display: block;
+  margin-top: 5px;
+  color: rgba(22, 49, 38, 0.62);
+  line-height: 1.35;
+}
+
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+
+@media (min-width: 920px) {
+  .espiagro-report-sheet-footer .espiagro-report-sheet-action-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1180px) {
+  .espiagro-relatorios-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .espiagro-summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .espiagro-filter-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .espiagro-generation-card {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .espiagro-generation-actions {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 840px) {
+  .espiagro-relatorios-page {
+    gap: 14px;
+  }
+
+  .espiagro-summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .espiagro-summary-card {
+    min-height: 116px;
+    padding: 13px;
+    border-radius: 18px;
+  }
+
+  .espiagro-summary-card h3 {
+    margin: 0 0 6px;
+    font-size: 0.92rem;
+    line-height: 1.2;
+  }
+
+  .espiagro-summary-value {
+    margin: 6px 0 5px;
+    font-size: 1.55rem;
+    line-height: 1;
+  }
+
+  .espiagro-summary-card p {
+    font-size: 0.8rem;
+    line-height: 1.28;
+  }
+
+  .espiagro-filter-header,
+  .espiagro-relatorios-actions,
+  .espiagro-filter-actions,
+  .espiagro-generation-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .espiagro-btn {
+    width: 100%;
+  }
+
+  .espiagro-relatorios-hero {
+    padding: 20px;
+  }
+
+  .espiagro-filter-card,
+  .espiagro-state-card,
+  .espiagro-empty-card,
+  .espiagro-report-card,
+  .espiagro-generation-card {
+    padding: 16px;
+  }
+
+  .espiagro-status-grid,
+  .espiagro-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .espiagro-report-sheet-backdrop {
+    padding: 12px;
+  }
+
+  .espiagro-report-sheet {
+    max-height: calc(88vh - env(safe-area-inset-bottom));
+    border-radius: 26px;
+  }
+}
+
+@media (max-width: 720px) {
+  .espiagro-report-sheet-footer {
+    padding: 10px 12px calc(12px + env(safe-area-inset-bottom));
+  }
+
+  .espiagro-report-sheet-footer .espiagro-report-sheet-action-panel > strong {
+    font-size: 0.88rem;
+  }
+
+  .espiagro-report-sheet-footer .espiagro-report-sheet-action-panel > p {
+    display: none;
+  }
+
+  .espiagro-report-sheet-footer .espiagro-report-sheet-action-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px;
+  }
+
+  .espiagro-report-sheet-footer .espiagro-report-sheet-action-grid .espiagro-btn {
+    min-height: 40px;
+    padding: 9px 10px;
+    border-radius: 13px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .espiagro-relatorios-page {
+    gap: 12px;
+
+  .espiagro-monitoring-details-backdrop {
+    padding: 10px 10px calc(86px + env(safe-area-inset-bottom));
+  }
+
+  .espiagro-monitoring-details-sheet {
+    width: 100%;
+    max-height: min(84dvh, 780px);
+    border-radius: 28px;
+  }
+
+  .espiagro-monitoring-details-header {
+    padding: 14px 16px 13px;
+  }
+
+  .espiagro-monitoring-details-scroll {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .espiagro-monitoring-details-image,
+  .espiagro-monitoring-details-image img {
+    min-height: 190px;
+    max-height: 260px;
+    border-radius: 18px;
+  }
+
+  .espiagro-monitoring-details-image.is-empty {
+    min-height: 190px;
+  }
+
+  .espiagro-monitoring-details-footer {
+    grid-template-columns: 1fr;
+    padding: 10px 14px calc(12px + env(safe-area-inset-bottom));
+  }
+  }
+
+  .espiagro-relatorios-hero {
+    padding: 18px;
+    border-radius: 22px;
+  }
+
+  .espiagro-relatorios-title {
+    font-size: 1.55rem;
+  }
+
+  .espiagro-relatorios-description {
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  .espiagro-relatorios-band {
+    width: 100%;
+    border-radius: 16px;
+    line-height: 1.45;
+  }
+
+  .espiagro-mini-card {
+    border-radius: 16px;
+    padding: 13px;
+  }
+
+  .espiagro-filter-card,
+  .espiagro-state-card,
+  .espiagro-empty-card,
+  .espiagro-report-card,
+  .espiagro-generation-card {
+    border-radius: 22px;
+  }
+
+  .espiagro-generation-card {
+    grid-template-columns: 1fr;
+  }
+
+  .espiagro-generation-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 14px;
+  }
+
+  .espiagro-generation-actions .espiagro-btn {
+    width: 100%;
+  }
+
+  .espiagro-report-card {
+    padding: 15px;
+  }
+
+  .espiagro-report-card-main {
+    grid-template-columns: 1fr;
+  }
+
+  .espiagro-report-card-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 15px;
+  }
+
+  .espiagro-report-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .espiagro-badge {
+    min-width: 0;
+    white-space: normal;
+    text-align: left;
+    justify-content: flex-start;
+  }
+
+  .espiagro-report-sheet-backdrop {
+    padding: 10px 8px calc(88px + env(safe-area-inset-bottom));
+  }
+
+  .espiagro-report-sheet {
+    width: 100%;
+    max-height: calc(86vh - env(safe-area-inset-bottom));
+    border-radius: 24px;
+  }
+
+  .espiagro-report-sheet-header {
+    padding: 16px;
+  }
+
+  .espiagro-report-sheet-scroll {
+    padding: 20px 16px 18px;
+    scroll-padding-top: 20px;
+  }
+
+  .espiagro-report-sheet-action-grid {
+    flex-direction: column;
+  }
+
+  .espiagro-report-sheet-action-grid .espiagro-btn {
+    width: 100%;
+    flex-basis: auto;
+  }
+}
+
+@media (max-width: 430px) {
+  .espiagro-report-sheet-footer .espiagro-report-sheet-action-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 2px;
+    /* hide scrollbar on IE/Edge */
+    -ms-overflow-style: none;
+  }
+
+  @supports (scrollbar-width: none) {
+    .espiagro-report-sheet-footer .espiagro-report-sheet-action-grid {
+      scrollbar-width: none;
+    }
+  }
+
+  .espiagro-report-sheet-footer .espiagro-report-sheet-action-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .espiagro-report-sheet-footer .espiagro-report-sheet-action-grid .espiagro-btn {
+    flex: 0 0 auto;
+    width: auto;
+    min-width: 136px;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 390px) {
+  .espiagro-monitoring-details-sheet {
+    border-radius: 24px;
+  }
+
+  .espiagro-monitoring-details-header {
+    padding: 13px 14px 12px;
+  }
+
+  .espiagro-monitoring-details-scroll {
+    padding: 14px;
+  }
+
+  .espiagro-monitoring-details-image,
+  .espiagro-monitoring-details-image img {
+    min-height: 170px;
+    max-height: 230px;
+  }
+
+  .espiagro-monitoring-details-image.is-empty {
+    min-height: 170px;
+  }
+
+  .espiagro-relatorios-hero {
+    padding: 16px;
+  }
+
+  .espiagro-relatorios-title {
+    font-size: 1.46rem;
+  }
+
+  .espiagro-summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .espiagro-summary-card {
+    min-height: 108px;
+    padding: 11px;
+  }
+
+  .espiagro-summary-card h3 {
+    font-size: 0.86rem;
+  }
+
+  .espiagro-summary-value {
+    font-size: 1.42rem;
+  }
+
+  .espiagro-summary-card p {
+    font-size: 0.76rem;
+  }
+
+  .espiagro-filter-card,
+  .espiagro-state-card,
+  .espiagro-empty-card,
+  .espiagro-report-card {
+    padding: 14px;
+  }
+
+  .espiagro-report-sheet {
+    border-radius: 22px;
+  }
+}

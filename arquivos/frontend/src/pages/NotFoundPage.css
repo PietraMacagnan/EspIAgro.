@@ -1,0 +1,306 @@
+.espiagro-not-found-page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+/* Base visual */
+.espiagro-not-found-hero,
+.espiagro-not-found-card,
+.espiagro-not-found-code-card,
+.espiagro-not-found-mini-card {
+  border: 1px solid rgba(22, 49, 38, 0.1);
+  border-radius: 20px;
+  box-shadow:
+    0 14px 30px rgba(19, 48, 34, 0.075),
+    inset 0 1px 0 rgba(255, 255, 255, 0.52);
+}
+
+/* Hero */
+.espiagro-not-found-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 16px;
+  background:
+    radial-gradient(circle at top right, rgba(157, 207, 79, 0.18), transparent 24%),
+    radial-gradient(circle at bottom left, rgba(36, 106, 138, 0.12), transparent 28%),
+    linear-gradient(135deg, #10241b 0%, #17362a 56%, #1f6b45 100%);
+  border-color: rgba(255, 255, 255, 0.08);
+  color: #f4fbf6;
+}
+
+.espiagro-not-found-hero::after {
+  content: "";
+  position: absolute;
+  inset: auto -70px -90px auto;
+  width: 240px;
+  height: 240px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(157, 207, 79, 0.18), transparent 70%);
+  pointer-events: none;
+}
+
+.espiagro-not-found-main,
+.espiagro-not-found-side {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+}
+
+.espiagro-not-found-kicker,
+.espiagro-not-found-card-kicker {
+  display: inline-block;
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.espiagro-not-found-kicker {
+  color: rgba(239, 250, 243, 0.86);
+}
+
+.espiagro-not-found-card-kicker {
+  color: var(--primary);
+}
+
+.espiagro-not-found-title {
+  margin: 10px 0 8px;
+  max-width: 720px;
+  color: #f8fcf9;
+  font-size: clamp(1.7rem, 2.8vw, 2.7rem);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+
+.espiagro-not-found-description {
+  margin: 0;
+  max-width: 720px;
+  color: rgba(239, 250, 243, 0.86);
+  font-size: 0.98rem;
+  line-height: 1.58;
+}
+
+.espiagro-not-found-band {
+  margin-top: 16px;
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  color: rgba(245, 251, 247, 0.94);
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.espiagro-not-found-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+.espiagro-not-found-button,
+.espiagro-not-found-card-link {
+  border: 0;
+  border-radius: 14px;
+  padding: 12px 16px;
+  font-weight: 900;
+  cursor: pointer;
+  transition:
+    transform 0.18s ease,
+    opacity 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  text-align: center;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.espiagro-not-found-button:hover,
+.espiagro-not-found-card-link:hover {
+  transform: translateY(-1px);
+  opacity: 0.97;
+}
+
+.espiagro-not-found-button-primary {
+  background: linear-gradient(135deg, var(--accent), #6dbf68);
+  color: #10241b;
+  box-shadow: 0 12px 24px rgba(157, 207, 79, 0.2);
+}
+
+.espiagro-not-found-button-secondary {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #f6fbf7;
+}
+
+/* Lateral */
+.espiagro-not-found-side {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+
+.espiagro-not-found-code-card,
+.espiagro-not-found-mini-card {
+  border-radius: 16px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.espiagro-not-found-code-card span,
+.espiagro-not-found-mini-card span {
+  display: block;
+  color: rgba(239, 250, 243, 0.72);
+  font-size: 0.82rem;
+  margin-bottom: 6px;
+}
+
+.espiagro-not-found-code-card strong {
+  display: block;
+  color: #ffffff;
+  font-size: 3.5rem;
+  line-height: 1;
+  letter-spacing: -0.06em;
+}
+
+.espiagro-not-found-code-card p {
+  margin: 10px 0 0;
+  color: rgba(239, 250, 243, 0.82);
+  line-height: 1.5;
+}
+
+.espiagro-not-found-mini-card strong {
+  color: #ffffff;
+  line-height: 1.35;
+  font-size: 1rem;
+}
+
+/* Cards de atalhos */
+.espiagro-not-found-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.espiagro-not-found-card {
+  padding: 18px;
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at top right, rgba(157, 207, 79, 0.08), transparent 30%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 252, 247, 0.98));
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.espiagro-not-found-card h2 {
+  margin: 8px 0;
+  color: var(--text);
+  line-height: 1.2;
+  font-size: 1.08rem;
+}
+
+.espiagro-not-found-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.espiagro-not-found-card-link {
+  width: 100%;
+  background: rgba(31, 107, 69, 0.08);
+  border: 1px solid rgba(31, 107, 69, 0.14);
+  color: var(--primary-strong);
+}
+
+/* Responsivo */
+@media (max-width: 1180px) {
+  .espiagro-not-found-hero,
+  .espiagro-not-found-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 840px) {
+  .espiagro-not-found-page {
+    gap: 14px;
+  }
+
+  .espiagro-not-found-actions {
+    flex-direction: column;
+  }
+
+  .espiagro-not-found-button {
+    width: 100%;
+  }
+
+  .espiagro-not-found-hero {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 560px) {
+  .espiagro-not-found-page {
+    gap: 12px;
+  }
+
+  .espiagro-not-found-hero {
+    padding: 18px;
+    border-radius: 20px;
+  }
+
+  .espiagro-not-found-title {
+    font-size: 1.58rem;
+  }
+
+  .espiagro-not-found-description {
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  .espiagro-not-found-band {
+    width: 100%;
+    border-radius: 14px;
+    line-height: 1.45;
+  }
+
+  .espiagro-not-found-code-card,
+  .espiagro-not-found-mini-card,
+  .espiagro-not-found-card {
+    border-radius: 18px;
+  }
+
+  .espiagro-not-found-code-card strong {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 390px) {
+  .espiagro-not-found-hero {
+    padding: 16px;
+  }
+
+  .espiagro-not-found-title {
+    font-size: 1.48rem;
+  }
+
+  .espiagro-not-found-card {
+    padding: 16px;
+  }
+}

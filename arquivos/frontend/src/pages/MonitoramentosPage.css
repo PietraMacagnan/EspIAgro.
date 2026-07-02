@@ -1,0 +1,1537 @@
+.espiagro-monitoramentos-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* =========================================================
+   BASE VISUAL
+========================================================= */
+
+.espiagro-monitoramentos-hero,
+.espiagro-summary-card,
+.espiagro-filter-card,
+.espiagro-state-card,
+.espiagro-empty-card,
+.espiagro-list-card,
+.espiagro-form-card,
+.espiagro-form-sheet,
+.espiagro-detail-box,
+.espiagro-note-box,
+.espiagro-map-card,
+.espiagro-form-intro-card,
+.espiagro-form-section,
+.espiagro-collection-status-card {
+  border: 1px solid rgba(22, 49, 38, 0.1);
+  border-radius: 22px;
+  box-shadow:
+    0 14px 30px rgba(19, 48, 34, 0.075),
+    inset 0 1px 0 rgba(255, 255, 255, 0.54);
+}
+
+.espiagro-summary-card,
+.espiagro-filter-card,
+.espiagro-state-card,
+.espiagro-empty-card,
+.espiagro-list-card,
+.espiagro-form-card,
+.espiagro-detail-box,
+.espiagro-note-box,
+.espiagro-form-intro-card,
+.espiagro-form-section,
+.espiagro-collection-status-card {
+  background:
+    radial-gradient(circle at top right, rgba(157, 207, 79, 0.08), transparent 30%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.985), rgba(248, 252, 247, 0.985));
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.espiagro-monitoramentos-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+  gap: 16px;
+  color: #f4f8f6;
+  background:
+    radial-gradient(circle at top right, rgba(157, 207, 79, 0.18), transparent 26%),
+    radial-gradient(circle at bottom left, rgba(36, 106, 138, 0.12), transparent 30%),
+    linear-gradient(135deg, #10241b 0%, #17362a 56%, #1f6b45 100%);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.espiagro-monitoramentos-hero::after {
+  content: "";
+  position: absolute;
+  right: -70px;
+  bottom: -90px;
+  width: 240px;
+  height: 240px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(157, 207, 79, 0.18), transparent 70%);
+  pointer-events: none;
+}
+
+.espiagro-page-hero-main,
+.espiagro-page-hero-side,
+.espiagro-monitoramentos-hero-main,
+.espiagro-monitoramentos-hero-side {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+}
+
+.espiagro-page-hero-main h1,
+.espiagro-monitoramentos-title {
+  margin: 10px 0 8px;
+  max-width: 760px;
+  color: #f8fbf9;
+  font-size: clamp(1.7rem, 3vw, 2.7rem);
+  line-height: 1.06;
+  letter-spacing: -0.035em;
+}
+
+.espiagro-page-hero-main p,
+.espiagro-monitoramentos-description {
+  margin: 0;
+  max-width: 760px;
+  color: rgba(239, 246, 243, 0.88);
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+.espiagro-relatorios-kicker,
+.espiagro-monitoramentos-kicker,
+.espiagro-panel-kicker {
+  display: inline-block;
+  font-size: 0.76rem;
+  font-weight: 950;
+  letter-spacing: 0.065em;
+  text-transform: uppercase;
+}
+
+.espiagro-relatorios-kicker,
+.espiagro-monitoramentos-kicker {
+  color: rgba(235, 244, 240, 0.86);
+}
+
+.espiagro-panel-kicker {
+  color: var(--primary, #1f6b45);
+}
+
+.espiagro-relatorios-band,
+.espiagro-monitoramentos-band {
+  margin-top: 16px;
+  width: fit-content;
+  max-width: 100%;
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 16px;
+  color: rgba(244, 248, 246, 0.96);
+  background: rgba(255, 255, 255, 0.11);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  font-size: 0.9rem;
+  font-weight: 850;
+}
+
+.espiagro-relatorios-actions,
+.espiagro-monitoramentos-actions,
+.espiagro-form-actions,
+.espiagro-filter-actions,
+.espiagro-map-toolbar,
+.espiagro-card-actions,
+.espiagro-state-actions,
+.espiagro-unsaved-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.espiagro-relatorios-actions,
+.espiagro-monitoramentos-actions {
+  margin-top: 18px;
+}
+
+.espiagro-page-hero-side,
+.espiagro-monitoramentos-hero-side {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+
+.espiagro-mini-card {
+  border-radius: 18px;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.11);
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+.espiagro-mini-label {
+  display: block;
+  margin-bottom: 6px;
+  color: rgba(235, 243, 240, 0.74);
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+
+.espiagro-mini-card strong {
+  display: block;
+  color: #ffffff;
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
+/* =========================================================
+   BOTÕES
+========================================================= */
+
+.espiagro-btn,
+.espiagro-form-sheet-close,
+.espiagro-filter-chip-button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.espiagro-btn {
+  min-height: 46px;
+  border: 0;
+  border-radius: 16px;
+  padding: 12px 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--text, #123326);
+  font-weight: 950;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform 0.18s ease,
+    opacity 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease;
+}
+
+.espiagro-btn:hover,
+.espiagro-form-sheet-close:hover,
+.espiagro-filter-chip-button:hover {
+  transform: translateY(-1px);
+  opacity: 0.97;
+}
+
+.espiagro-btn:disabled,
+.espiagro-form-sheet-close:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.espiagro-btn-primary {
+  background: linear-gradient(135deg, var(--accent, #9dcf4f), #6dbf68);
+  color: #10241b;
+  box-shadow: 0 12px 24px rgba(157, 207, 79, 0.22);
+}
+
+.espiagro-btn-secondary {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #f6fbf7;
+}
+
+.espiagro-btn-ghost,
+.espiagro-btn-retry {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid var(--border, rgba(22, 49, 38, 0.12));
+  color: var(--text, #123326);
+}
+
+.espiagro-btn-danger {
+  background: rgba(185, 65, 47, 0.1);
+  border: 1px solid rgba(185, 65, 47, 0.2);
+  color: var(--danger, #b9412f);
+}
+
+/* =========================================================
+   RESUMO
+========================================================= */
+
+.espiagro-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.espiagro-summary-card {
+  padding: 18px;
+  border-radius: 20px;
+}
+
+.espiagro-summary-card h3 {
+  margin: 0 0 8px;
+  color: var(--text, #123326);
+  line-height: 1.2;
+}
+
+.espiagro-summary-card p {
+  margin: 0;
+  color: var(--muted, #718179);
+  line-height: 1.5;
+}
+
+.espiagro-summary-value {
+  display: block;
+  margin: 10px 0 8px;
+  color: var(--text, #123326);
+  font-size: 2rem;
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+
+.espiagro-tone-green {
+  border-top: 4px solid var(--primary, #1f6b45);
+}
+
+.espiagro-tone-amber {
+  border-top: 4px solid var(--warning, #c98216);
+}
+
+.espiagro-tone-red {
+  border-top: 4px solid var(--danger, #b9412f);
+}
+
+.espiagro-tone-blue {
+  border-top: 4px solid var(--info, #246a8a);
+}
+
+/* =========================================================
+   FILTROS / AÇÕES RÁPIDAS
+========================================================= */
+
+.espiagro-filter-card {
+  padding: 18px;
+  border-radius: 22px;
+}
+
+.espiagro-filter-header,
+.espiagro-form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.espiagro-filter-header h3,
+.espiagro-form-header h3 {
+  margin: 6px 0 8px;
+  color: var(--text, #123326);
+  line-height: 1.2;
+}
+
+.espiagro-filter-header p,
+.espiagro-form-header p {
+  margin: 0;
+  color: var(--muted, #718179);
+  line-height: 1.55;
+}
+
+.espiagro-filter-fields {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.espiagro-active-filters {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.espiagro-filter-chip {
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  padding: 8px 12px;
+  background: rgba(31, 107, 69, 0.08);
+  border: 1px solid rgba(31, 107, 69, 0.12);
+  color: var(--primary-strong, #184d35);
+  font-size: 0.84rem;
+  font-weight: 900;
+}
+
+.espiagro-filter-chip-button {
+  cursor: pointer;
+  background: rgba(185, 65, 47, 0.08);
+  border-color: rgba(185, 65, 47, 0.14);
+  color: var(--danger, #b9412f);
+}
+
+/* =========================================================
+   ESTADOS
+========================================================= */
+
+.espiagro-state-card,
+.espiagro-empty-card {
+  padding: 20px;
+  text-align: center;
+}
+
+.espiagro-state-card h2,
+.espiagro-empty-card h3 {
+  margin: 0 0 8px;
+  color: var(--text, #123326);
+  line-height: 1.2;
+}
+
+.espiagro-state-card p,
+.espiagro-empty-card p {
+  margin: 0;
+  color: var(--muted, #718179);
+  line-height: 1.55;
+}
+
+.espiagro-state-actions {
+  margin-top: 18px;
+  justify-content: center;
+}
+
+.espiagro-empty-card {
+  border-style: dashed;
+}
+
+/* =========================================================
+   BOTTOM SHEET DO FORMULÁRIO
+========================================================= */
+
+.espiagro-form-sheet-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1280;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(8, 17, 12, 0.5);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.espiagro-form-sheet {
+  width: min(1040px, 100%);
+  max-height: min(88dvh, 920px);
+  overflow-y: auto;
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at top right, rgba(157, 207, 79, 0.16), transparent 28%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.99), rgba(248, 252, 247, 0.97));
+  border: 1px solid rgba(255, 255, 255, 0.78);
+  box-shadow:
+    0 30px 80px rgba(8, 17, 12, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.86);
+  overscroll-behavior: contain;
+}
+
+.espiagro-form-sheet .espiagro-form-card {
+  border: 0;
+  box-shadow: none;
+  background: transparent;
+  padding: 22px;
+}
+
+.espiagro-form-sheet-close {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  border: 1px solid rgba(22, 49, 38, 0.1);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--text, #123326);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 20px rgba(19, 48, 34, 0.06);
+}
+
+.espiagro-form-sheet-close:active {
+  transform: scale(0.96);
+}
+
+.espiagro-form-intro-card {
+  margin-top: 16px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at top right, rgba(36, 106, 138, 0.1), transparent 30%),
+    linear-gradient(180deg, rgba(247, 251, 246, 0.98), rgba(238, 247, 241, 0.98));
+}
+
+.espiagro-form-intro-card strong {
+  display: block;
+  color: var(--text, #123326);
+  margin-bottom: 6px;
+  line-height: 1.25;
+}
+
+.espiagro-form-intro-card p {
+  margin: 0;
+  color: var(--muted, #718179);
+  line-height: 1.55;
+}
+
+/* =========================================================
+   FORMULÁRIO
+========================================================= */
+
+.espiagro-form-section {
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: 20px;
+}
+
+.espiagro-form-section-header {
+  display: grid;
+  gap: 5px;
+  margin-bottom: 14px;
+}
+
+.espiagro-form-section-header strong {
+  color: var(--text, #123326);
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.espiagro-form-section-header p {
+  margin: 0;
+  color: var(--muted, #718179);
+  line-height: 1.5;
+  font-size: 0.92rem;
+}
+
+.espiagro-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.espiagro-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.espiagro-field-full {
+  grid-column: 1 / -1;
+}
+
+.espiagro-field label {
+  color: var(--text, #123326);
+  font-size: 0.9rem;
+  font-weight: 900;
+  line-height: 1.25;
+}
+
+.espiagro-field small {
+  color: rgba(22, 49, 38, 0.62);
+  font-size: 0.82rem;
+  line-height: 1.38;
+}
+
+.espiagro-field input,
+.espiagro-field select,
+.espiagro-field textarea {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid var(--border, rgba(22, 49, 38, 0.12));
+  background: #ffffff;
+  color: var(--text, #123326);
+  border-radius: 16px;
+  padding: 12px 14px;
+  outline: none;
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    transform 0.18s ease;
+}
+
+.espiagro-field textarea {
+  resize: vertical;
+  min-height: 118px;
+}
+
+.espiagro-field input:focus,
+.espiagro-field select:focus,
+.espiagro-field textarea:focus {
+  border-color: rgba(31, 107, 69, 0.42);
+  box-shadow: 0 0 0 4px rgba(31, 107, 69, 0.08);
+  transform: translateY(-1px);
+}
+
+.espiagro-form-actions {
+  margin-top: 16px;
+}
+
+.espiagro-form-actions .espiagro-btn {
+  flex: 1 1 180px;
+}
+
+/* =========================================================
+   COLETA ATIVA / ARQUIVADA
+========================================================= */
+
+.espiagro-collection-status-card {
+  padding: 14px;
+  border-radius: 18px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: center;
+}
+
+.espiagro-collection-status-card strong {
+  display: block;
+  color: var(--text, #123326);
+  margin-bottom: 5px;
+  line-height: 1.25;
+}
+
+.espiagro-collection-status-card p {
+  margin: 0;
+  color: var(--muted, #718179);
+  line-height: 1.45;
+  font-size: 0.9rem;
+}
+
+.espiagro-collection-status-toggle {
+  position: relative;
+  display: inline-flex;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.espiagro-collection-status-toggle input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.espiagro-collection-status-toggle span {
+  min-width: 112px;
+  min-height: 44px;
+  border-radius: 999px;
+  padding: 10px 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted, #718179);
+  background: rgba(22, 49, 38, 0.08);
+  border: 1px solid rgba(22, 49, 38, 0.12);
+  font-size: 0.88rem;
+  font-weight: 950;
+  transition:
+    background 0.18s ease,
+    color 0.18s ease,
+    box-shadow 0.18s ease,
+    transform 0.18s ease;
+}
+
+.espiagro-collection-status-toggle input:checked + span {
+  color: #10241b;
+  background: linear-gradient(135deg, var(--accent, #9dcf4f), #6dbf68);
+  border-color: rgba(31, 107, 69, 0.16);
+  box-shadow: 0 12px 24px rgba(31, 107, 69, 0.16);
+}
+
+.espiagro-collection-status-toggle input:focus-visible + span {
+  outline: 3px solid rgba(31, 107, 69, 0.22);
+  outline-offset: 3px;
+}
+
+.espiagro-collection-status-toggle:active span {
+  transform: scale(0.97);
+}
+
+/* =========================================================
+   AVISO DE DADOS NÃO SALVOS
+========================================================= */
+
+.espiagro-unsaved-alert {
+  margin-top: 14px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at top right, rgba(201, 130, 22, 0.12), transparent 34%),
+    linear-gradient(180deg, rgba(255, 250, 242, 0.98), rgba(255, 247, 236, 0.96));
+  border: 1px solid rgba(201, 130, 22, 0.18);
+}
+
+.espiagro-unsaved-alert strong {
+  display: block;
+  margin-bottom: 4px;
+  color: #7a4511;
+  font-size: 0.92rem;
+  line-height: 1.25;
+}
+
+.espiagro-unsaved-alert span {
+  display: block;
+  color: #8a5a21;
+  font-size: 0.86rem;
+  line-height: 1.42;
+}
+
+.espiagro-unsaved-actions {
+  margin-top: 12px;
+}
+
+/* =========================================================
+   FEEDBACKS
+========================================================= */
+
+.espiagro-feedback-message,
+.espiagro-feedback-error {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  font-size: 0.94rem;
+  line-height: 1.45;
+}
+
+.espiagro-feedback-message {
+  background: rgba(31, 107, 69, 0.08);
+  border: 1px solid rgba(31, 107, 69, 0.14);
+  color: var(--primary-strong, #184d35);
+}
+
+.espiagro-feedback-error {
+  background: rgba(185, 65, 47, 0.08);
+  border: 1px solid rgba(185, 65, 47, 0.16);
+  color: var(--danger, #b9412f);
+}
+
+/* =========================================================
+   MAPA DO FORMULÁRIO
+========================================================= */
+
+.espiagro-map-card {
+  margin-top: 4px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #ffffff;
+}
+
+.espiagro-map-toolbar {
+  padding: 12px;
+  border-bottom: 1px solid var(--border, rgba(22, 49, 38, 0.12));
+  background: var(--surface-soft, #f4f8f3);
+}
+
+.espiagro-map-status {
+  padding: 10px 14px;
+  color: var(--primary-strong, #184d35);
+  background: rgba(31, 107, 69, 0.07);
+  border-bottom: 1px solid rgba(31, 107, 69, 0.09);
+  font-size: 0.88rem;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.espiagro-map-shell {
+  position: relative;
+  width: 100%;
+  min-height: 340px;
+  height: 340px;
+}
+
+.espiagro-form-sheet .espiagro-map-shell {
+  min-height: 360px;
+  height: 360px;
+}
+
+.espiagro-draw-map,
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  font-family: inherit;
+  z-index: 0;
+}
+
+.espiagro-map-helper {
+  padding: 12px 14px;
+  border-top: 1px solid var(--border, rgba(22, 49, 38, 0.12));
+  background: rgba(36, 106, 138, 0.04);
+}
+
+.espiagro-map-helper p {
+  margin: 0;
+  color: var(--muted, #718179);
+  line-height: 1.5;
+  font-size: 0.9rem;
+}
+
+/* =========================================================
+   IMAGEM
+========================================================= */
+
+.espiagro-file-box,
+.espiagro-preview-box {
+  margin-top: 10px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: rgba(36, 106, 138, 0.06);
+  border: 1px solid rgba(36, 106, 138, 0.12);
+  color: var(--text, #123326);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.espiagro-preview-box strong {
+  display: block;
+  color: var(--text, #123326);
+  margin-bottom: 10px;
+}
+
+.espiagro-preview-image {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  max-height: 280px;
+  border-radius: 18px;
+  border: 1px solid var(--border, rgba(22, 49, 38, 0.12));
+  object-fit: cover;
+  background: #ffffff;
+}
+
+/* =========================================================
+   LISTA DE COLETAS
+========================================================= */
+
+.espiagro-list-grid,
+.espiagro-list-wrap {
+  display: grid;
+  gap: 14px;
+}
+
+.espiagro-list-card {
+  padding: 16px;
+  border-radius: 24px;
+}
+
+.espiagro-list-card:has(.espiagro-monitoramento-card-visual) {
+  display: grid;
+  grid-template-columns: minmax(150px, 190px) minmax(0, 1fr);
+  gap: 16px;
+  overflow: hidden;
+}
+
+.espiagro-monitoramento-card-visual {
+  grid-row: 1 / span 4;
+  width: 100%;
+  min-height: 174px;
+  border-radius: 20px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top right, rgba(157, 207, 79, 0.18), transparent 34%),
+    linear-gradient(135deg, rgba(31, 107, 69, 0.14), rgba(247, 251, 246, 0.96));
+  border: 1px solid rgba(31, 107, 69, 0.1);
+}
+
+.espiagro-monitoramento-card-visual img {
+  width: 100%;
+  height: 100%;
+  min-height: 174px;
+  object-fit: cover;
+}
+
+.espiagro-monitoramento-card-fallback {
+  width: 100%;
+  height: 100%;
+  min-height: 174px;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.espiagro-monitoramento-card-fallback span {
+  width: 58px;
+  height: 58px;
+  border-radius: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--accent, #9dcf4f), #6dbf68);
+  color: #10241b;
+  font-size: 1.15rem;
+  font-weight: 950;
+  box-shadow: 0 14px 26px rgba(31, 107, 69, 0.16);
+}
+
+.espiagro-monitoramento-card-fallback small {
+  color: var(--primary-strong, #184d35);
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+.espiagro-list-header {
+  min-width: 0;
+}
+
+.espiagro-list-title {
+  margin: 0;
+  color: var(--text, #123326);
+  line-height: 1.2;
+  word-break: break-word;
+}
+
+.espiagro-list-meta {
+  margin: 6px 0 0;
+  color: var(--muted, #718179);
+  font-size: 0.92rem;
+  line-height: 1.45;
+  word-break: break-word;
+}
+
+.espiagro-list-card .espiagro-phenology-badge,
+.espiagro-list-card .espiagro-phase-card {
+  margin-top: 12px;
+}
+
+/* =========================================================
+   RESUMO E AÇÕES DO CARD
+========================================================= */
+
+.espiagro-card-summary {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+}
+
+.espiagro-card-summary strong {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--text, #123326);
+  line-height: 1.25;
+}
+
+.espiagro-card-summary p {
+  margin: 0;
+  color: var(--muted, #718179);
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.espiagro-card-toggle {
+  min-width: 170px;
+}
+
+.espiagro-card-actions {
+  margin-top: 14px;
+}
+
+.espiagro-card-details {
+  grid-column: 1 / -1;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border, rgba(22, 49, 38, 0.12));
+}
+
+/* =========================================================
+   DETALHES / LEITURAS
+========================================================= */
+
+.espiagro-detail-grid,
+.espiagro-detail-grid-3 {
+  margin-top: 14px;
+  display: grid;
+  gap: 12px;
+}
+
+.espiagro-detail-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.espiagro-detail-grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.espiagro-detail-box {
+  padding: 14px;
+  border-radius: 18px;
+  min-width: 0;
+  background:
+    radial-gradient(circle at top right, rgba(157, 207, 79, 0.08), transparent 30%),
+    linear-gradient(180deg, #fbfdf9, #f4faf2);
+}
+
+.espiagro-detail-label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--muted, #718179);
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+
+.espiagro-detail-value {
+  display: block;
+  color: var(--text, #123326);
+  font-weight: 900;
+  line-height: 1.35;
+  word-break: break-word;
+}
+
+.espiagro-detail-helper {
+  display: block;
+  margin-top: 8px;
+  color: rgba(22, 49, 38, 0.62);
+  font-size: 0.8rem;
+  line-height: 1.38;
+}
+
+/* Tons de leitura */
+.espiagro-reading-green {
+  border-color: rgba(31, 107, 69, 0.15);
+  background:
+    radial-gradient(circle at top right, rgba(157, 207, 79, 0.12), transparent 34%),
+    linear-gradient(180deg, #fbfff8, #f2faec);
+}
+
+.espiagro-reading-amber {
+  border-color: rgba(201, 130, 22, 0.18);
+  background:
+    radial-gradient(circle at top right, rgba(201, 130, 22, 0.12), transparent 34%),
+    linear-gradient(180deg, #fffdf8, #fff6e8);
+}
+
+.espiagro-reading-red {
+  border-color: rgba(185, 65, 47, 0.18);
+  background:
+    radial-gradient(circle at top right, rgba(185, 65, 47, 0.12), transparent 34%),
+    linear-gradient(180deg, #fffafa, #fff1ef);
+}
+
+.espiagro-reading-blue {
+  border-color: rgba(36, 106, 138, 0.16);
+  background:
+    radial-gradient(circle at top right, rgba(36, 106, 138, 0.1), transparent 34%),
+    linear-gradient(180deg, #fbfdff, #eef7fb);
+}
+
+/* =========================================================
+   NOTAS
+========================================================= */
+
+.espiagro-note-box {
+  margin-top: 14px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at top right, rgba(157, 207, 79, 0.12), transparent 30%),
+    linear-gradient(180deg, rgba(247, 251, 246, 0.98), rgba(240, 248, 238, 0.98));
+  border: 1px solid rgba(31, 107, 69, 0.12);
+}
+
+.espiagro-note-box strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text, #123326);
+  line-height: 1.25;
+}
+
+.espiagro-note-box p {
+  margin: 8px 0 0;
+  color: var(--muted, #718179);
+  line-height: 1.55;
+  word-break: break-word;
+}
+
+.espiagro-note-box ul {
+  margin: 8px 0 0;
+  padding-left: 18px;
+}
+
+.espiagro-note-box li {
+  margin-bottom: 6px;
+  color: var(--muted, #718179);
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+/* =========================================================
+   BOTTOM SHEET DE DETALHES DA COLETA
+========================================================= */
+
+.espiagro-monitoring-details-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1320;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 18px;
+  background: rgba(8, 17, 12, 0.52);
+  -webkit-backdrop-filter: blur(9px);
+  backdrop-filter: blur(9px);
+  overscroll-behavior: contain;
+}
+
+.espiagro-monitoring-details-sheet {
+  width: min(980px, 100%);
+  max-height: min(88dvh, 860px);
+  min-height: 0;
+  overflow: hidden;
+  border: 1px solid rgba(22, 49, 38, 0.12);
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at top right, rgba(157, 207, 79, 0.15), transparent 28%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.99), rgba(248, 252, 247, 0.98));
+  box-shadow: 0 30px 80px rgba(8, 17, 12, 0.34);
+  display: flex;
+  flex-direction: column;
+}
+
+.espiagro-monitoring-details-handle {
+  width: 50px;
+  height: 5px;
+  margin: 10px auto 0;
+  border-radius: 999px;
+  background: rgba(22, 49, 38, 0.18);
+  flex: 0 0 auto;
+}
+
+.espiagro-monitoring-details-header {
+  flex: 0 0 auto;
+  padding: 16px 18px 14px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: flex-start;
+  border-bottom: 1px solid rgba(22, 49, 38, 0.08);
+}
+
+.espiagro-monitoring-details-header h2 {
+  margin: 6px 0 6px;
+  color: var(--text, #123326);
+  font-size: clamp(1.18rem, 5vw, 1.82rem);
+  line-height: 1.14;
+  letter-spacing: -0.03em;
+  word-break: break-word;
+}
+
+.espiagro-monitoring-details-header p {
+  margin: 0;
+  color: var(--muted, #718179);
+  line-height: 1.45;
+}
+
+.espiagro-monitoring-details-scroll {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 18px;
+  display: grid;
+  gap: 14px;
+  overscroll-behavior: contain;
+}
+
+.espiagro-monitoring-details-scroll > * {
+  margin-top: 0;
+}
+
+.espiagro-monitoring-details-image {
+  width: 100%;
+  min-height: 220px;
+  max-height: 340px;
+  overflow: hidden;
+  border-radius: 22px;
+  border: 1px solid rgba(22, 49, 38, 0.1);
+  background:
+    radial-gradient(circle at top right, rgba(157, 207, 79, 0.16), transparent 34%),
+    linear-gradient(135deg, rgba(31, 107, 69, 0.12), rgba(247, 251, 246, 0.98));
+}
+
+.espiagro-monitoring-details-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 220px;
+  max-height: 340px;
+  display: block;
+  object-fit: cover;
+}
+
+.espiagro-monitoring-details-image.is-empty {
+  padding: 22px;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 8px;
+  text-align: center;
+  min-height: 210px;
+}
+
+.espiagro-monitoring-details-image.is-empty span {
+  width: 62px;
+  height: 62px;
+  border-radius: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--accent, #9dcf4f), #6dbf68);
+  color: #10241b;
+  font-size: 1.2rem;
+  font-weight: 950;
+  box-shadow: 0 14px 26px rgba(31, 107, 69, 0.16);
+}
+
+.espiagro-monitoring-details-image.is-empty strong {
+  color: var(--text, #123326);
+  line-height: 1.25;
+}
+
+.espiagro-monitoring-details-image.is-empty p {
+  margin: 0;
+  max-width: 520px;
+  color: var(--muted, #718179);
+  line-height: 1.5;
+}
+
+.espiagro-monitoring-details-section {
+  display: grid;
+  gap: 12px;
+}
+
+.espiagro-monitoring-details-section-header {
+  display: grid;
+  gap: 5px;
+}
+
+.espiagro-monitoring-details-section-header strong {
+  color: var(--text, #123326);
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.espiagro-monitoring-details-section-header p {
+  margin: 0;
+  color: var(--muted, #718179);
+  font-size: 0.9rem;
+  line-height: 1.48;
+}
+
+.espiagro-monitoring-details-footer {
+  flex: 0 0 auto;
+  padding: 12px 18px calc(14px + env(safe-area-inset-bottom));
+  display: grid;
+  grid-template-columns: 1.2fr 0.9fr 0.9fr;
+  gap: 10px;
+  border-top: 1px solid rgba(22, 49, 38, 0.08);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(248, 252, 247, 0.98));
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 -14px 28px rgba(19, 48, 34, 0.08);
+}
+
+.espiagro-monitoring-details-footer .espiagro-btn {
+  width: 100%;
+  min-height: 44px;
+  border-radius: 15px;
+}
+
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+
+@media (max-width: 1180px) {
+  .espiagro-monitoramentos-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .espiagro-summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .espiagro-detail-grid,
+  .espiagro-detail-grid-3,
+  .espiagro-form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .espiagro-list-card:has(.espiagro-monitoramento-card-visual) {
+    grid-template-columns: 1fr;
+  }
+
+  .espiagro-monitoramento-card-visual {
+    grid-row: auto;
+    min-height: 190px;
+  }
+
+  .espiagro-monitoramento-card-visual img,
+  .espiagro-monitoramento-card-fallback {
+    min-height: 190px;
+  }
+
+  .espiagro-card-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .espiagro-card-toggle {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .espiagro-card-actions {
+    flex-direction: column;
+  }
+
+  .espiagro-card-actions .espiagro-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 840px) {
+  .espiagro-monitoramentos-page {
+    gap: 14px;
+  }
+
+  .espiagro-summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .espiagro-summary-card {
+    min-height: 118px;
+    padding: 13px;
+    border-radius: 18px;
+  }
+
+  .espiagro-summary-card h3 {
+    margin-bottom: 6px;
+    font-size: 0.92rem;
+  }
+
+  .espiagro-summary-value {
+    margin: 7px 0 6px;
+    font-size: 1.56rem;
+  }
+
+  .espiagro-summary-card p {
+    font-size: 0.8rem;
+    line-height: 1.32;
+  }
+
+  .espiagro-filter-header,
+  .espiagro-form-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .espiagro-filter-actions,
+  .espiagro-form-actions,
+  .espiagro-map-toolbar,
+  .espiagro-unsaved-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .espiagro-btn {
+    width: 100%;
+  }
+
+  .espiagro-monitoramentos-hero {
+    padding: 20px;
+  }
+
+  .espiagro-filter-card,
+  .espiagro-list-card,
+  .espiagro-state-card,
+  .espiagro-empty-card {
+    padding: 16px;
+  }
+
+  .espiagro-map-shell {
+    min-height: 300px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 560px) {
+  .espiagro-monitoramentos-page {
+    gap: 12px;
+  }
+
+  .espiagro-monitoramentos-hero {
+    padding: 18px;
+    border-radius: 22px;
+  }
+
+  .espiagro-page-hero-main h1,
+  .espiagro-monitoramentos-title {
+    font-size: 1.55rem;
+  }
+
+  .espiagro-page-hero-main p,
+  .espiagro-monitoramentos-description {
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  .espiagro-relatorios-band,
+  .espiagro-monitoramentos-band {
+    width: 100%;
+    border-radius: 16px;
+    line-height: 1.45;
+  }
+
+  .espiagro-mini-card {
+    border-radius: 16px;
+    padding: 13px;
+  }
+
+  .espiagro-form-sheet-overlay {
+    align-items: flex-end;
+    padding: 10px 10px calc(86px + env(safe-area-inset-bottom));
+  }
+
+  .espiagro-form-sheet {
+    width: 100%;
+    max-height: min(82dvh, 760px);
+    border-radius: 28px;
+  }
+
+  .espiagro-form-sheet .espiagro-form-card {
+    padding: 16px;
+  }
+
+  .espiagro-form-sheet .espiagro-form-header {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .espiagro-form-intro-card,
+  .espiagro-form-section,
+  .espiagro-collection-status-card,
+  .espiagro-detail-box,
+  .espiagro-note-box {
+    border-radius: 16px;
+  }
+
+  .espiagro-form-section {
+    padding: 14px;
+  }
+
+  .espiagro-collection-status-card {
+    grid-template-columns: 1fr;
+  }
+
+  .espiagro-collection-status-toggle {
+    width: 100%;
+  }
+
+  .espiagro-collection-status-toggle span {
+    width: 100%;
+  }
+
+  .espiagro-form-sheet .espiagro-map-shell {
+    min-height: 300px;
+    height: 300px;
+  }
+
+  .espiagro-monitoramento-card-visual {
+    min-height: 176px;
+    border-radius: 16px;
+  }
+
+  .espiagro-monitoramento-card-visual img,
+  .espiagro-monitoramento-card-fallback {
+    min-height: 176px;
+  }
+}
+
+@media (max-width: 390px) {
+  .espiagro-monitoramentos-hero {
+    padding: 16px;
+  }
+
+  .espiagro-page-hero-main h1,
+  .espiagro-monitoramentos-title {
+    font-size: 1.46rem;
+  }
+
+  .espiagro-summary-grid {
+    gap: 8px;
+  }
+
+  .espiagro-summary-card,
+  .espiagro-filter-card,
+  .espiagro-list-card,
+  .espiagro-state-card,
+  .espiagro-empty-card {
+    padding: 14px;
+  }
+
+  .espiagro-summary-card {
+    min-height: 108px;
+  }
+
+  .espiagro-summary-card h3 {
+    font-size: 0.86rem;
+  }
+
+  .espiagro-summary-value {
+    font-size: 1.42rem;
+  }
+
+  .espiagro-summary-card p {
+    font-size: 0.76rem;
+  }
+
+  .espiagro-form-sheet {
+    border-radius: 24px;
+  }
+
+  .espiagro-form-sheet .espiagro-form-card {
+    padding: 14px;
+  }
+
+  .espiagro-form-sheet .espiagro-map-shell {
+    min-height: 270px;
+    height: 270px;
+  }
+
+  .espiagro-monitoramento-card-visual {
+    min-height: 160px;
+  }
+
+  .espiagro-monitoramento-card-visual img,
+  .espiagro-monitoramento-card-fallback {
+    min-height: 160px;
+  }
+}
